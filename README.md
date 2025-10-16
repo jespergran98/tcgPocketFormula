@@ -10,6 +10,21 @@ D = 75 - 80 (Average)
 E = 70 - 75 (Below Average)
 Unranked = Below 70 (Insufficient/Unqualified)
 
+---
+
+Formula 1: Hierarchical Bayesian Estimation with Meta Awareness (Sort by strength)
+
+Formula 2: Adaptive Wilson Score Interval (probably don't include this)
+
+
+Sort by:
+
+Rating = Hierarchical Bayesian Estimation with Meta Awareness
+
+Win % = (Wins / (Wins + Losses)) × 100
+
+Share = (Deck Count / Total Count of All Decks) × 100
+
 
 ---
 
