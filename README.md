@@ -87,7 +87,7 @@ Here are the new entries:
 
 ---
 
-Secluded Springs top 50: 
+Secluded Springs top 500: 
 
 const data = [
     [1, "Suicune ex Greninja", 6802, 5798, 299],
