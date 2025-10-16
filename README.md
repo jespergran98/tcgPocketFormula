@@ -9,11 +9,11 @@ const data = [
     [rank, "name", wins, losses, ties],
     [rank, "name", wins, losses, ties]
 ];
-Here are the new entries:
+Here are the new entries: 
 
 ---
 
-Secluded Springs: 
+Secluded Springs top 50: 
 
 const data = [
     [1, "Suicune ex Greninja", 6802, 5798, 299],
@@ -70,7 +70,7 @@ const data = [
 
 ---
 
-Shining Revelry:
+Shining Revelry top 50:
 
 const data = [
     [1, "Giratina ex Darkrai ex", 7284, 5937, 221],
@@ -123,4 +123,109 @@ const data = [
     [48, "Giratina ex Magnezone", 59, 65, 1],
     [49, "Giratina ex Greninja", 47, 63, 2],
     [50, "Pikachu ex Magnezone", 56, 65, 2]
+];
+
+Celestial Guardians top 100:
+
+const data = [
+    [1, "Giratina ex Darkrai ex", 4908, 4213, 157],
+    [2, "Giratina ex Greninja", 4163, 3765, 124],
+    [3, "Meowscarada Decidueye ex", 2949, 2604, 86],
+    [4, "Arceus ex Crobat", 2723, 2450, 45],
+    [5, "Garchomp ex Rampardos", 2328, 2073, 45],
+    [6, "Charizard ex Incineroar ex", 1585, 1559, 17],
+    [7, "Solgaleo ex Skarmory", 1414, 1527, 38],
+    [8, "Greninja Oricorio", 1734, 1655, 56],
+    [9, "Magnezone Oricorio", 1022, 1008, 23],
+    [10, "Greninja Giratina ex", 689, 633, 18],
+    [11, "Lucario Rampardos", 674, 648, 10],
+    [12, "Charizard ex Turtonator", 643, 624, 12],
+    [13, "Lycanroc Rampardos", 477, 493, 6],
+    [14, "Giratina ex Magnezone", 492, 381, 14],
+    [15, "Charizard ex", 418, 462, 2],
+    [16, "Incineroar ex", 307, 322, 6],
+    [17, "Gallade ex Rampardos", 290, 265, 10],
+    [18, "Lunala ex Giratina ex", 206, 266, 2],
+    [19, "Beedrill ex Beedrill", 230, 228, 3],
+    [20, "Aerodactyl ex Rampardos", 234, 226, 2],
+    [21, "Meowscarada Tsareena", 196, 207, 1],
+    [22, "Charizard ex Moltres ex", 182, 212, 4],
+    [23, "Gengar", 183, 159, 8],
+    [24, "Togekiss", 182, 180, 2],
+    [25, "Giratina ex Arceus ex", 175, 143, 2],
+    [26, "Solgaleo ex Snorlax", 143, 161, 4],
+    [27, "Incineroar ex Turtonator", 185, 187, 9],
+    [28, "Banette Mewtwo ex", 147, 177, 7],
+    [29, "Crabominable ex Greninja", 145, 152, 2],
+    [30, "Mewtwo ex Gardevoir", 132, 170, 3],
+    [31, "Infernape ex Turtonator", 140, 131, 2],
+    [32, "Beedrill ex Meowscarada", 92, 128, 1],
+    [33, "Decidueye ex Lurantis", 119, 106, 5],
+    [34, "Incineroar ex Charizard ex", 99, 124, 1],
+    [35, "Solgaleo ex", 87, 115, 6],
+    [36, "Gyarados ex Manaphy", 72, 95, 6],
+    [37, "Crobat Darkrai ex", 90, 91, 0],
+    [38, "Tsareena Meowscarada", 61, 93, 0],
+    [39, "Celebi ex Serperior", 60, 102, 1],
+    [40, "Incineroar ex Infernape ex", 113, 98, 2],
+    [41, "Gengar Tapu Lele", 86, 80, 3],
+    [42, "Luxray Oricorio", 63, 88, 0],
+    [43, "Gengar ex Gengar", 65, 94, 1],
+    [44, "Gengar ex Gengar", 68, 77, 3],
+    [45, "Darkrai ex Greninja", 63, 78, 0],
+    [46, "Solgaleo ex Escavalier", 66, 85, 8],
+    [47, "Crabominable ex Palkia ex", 83, 78, 2],
+    [48, "Togekiss Tapu Lele", 76, 77, 2],
+    [49, "Dragonite Giratina ex", 72, 87, 0],
+    [50, "Giratina ex Banette", 54, 71, 2],
+    [51, "Darkrai ex Arceus ex", 45, 62, 0],
+    [52, "Solgaleo ex Excadrill", 62, 67, 7],
+    [53, "Wishiwashi ex Wishiwashi", 48, 64, 2],
+    [54, "Meowscarada Beedrill ex", 58, 67, 1],
+    [55, "Banette Greninja", 82, 78, 3],
+    [56, "Gallade ex Hitmonlee", 54, 57, 2],
+    [57, "Giratina ex Snorlax", 21, 56, 2],
+    [58, "Darkrai ex Weezing", 40, 52, 1],
+    [59, "Charizard ex Moltres ex", 35, 47, 0],
+    [60, "Blastoise ex Manaphy", 25, 36, 0],
+    [61, "Magnezone Giratina ex", 35, 41, 2],
+    [62, "Weavile ex Darkrai ex", 34, 43, 0],
+    [63, "Gallade ex Lucario", 29, 43, 0],
+    [64, "Gyarados ex Greninja", 22, 39, 0],
+    [65, "Gallade ex", 21, 41, 0],
+    [66, "Charizard ex Ninetales", 56, 45, 0],
+    [67, "Giratina ex Mewtwo ex", 25, 40, 0],
+    [68, "Giratina ex Mimikyu", 47, 41, 4],
+    [69, "Pikachu ex Pachirisu", 40, 45, 2],
+    [70, "Alolan Raichu ex Pachirisu", 24, 42, 0],
+    [71, "Magnezone Meowscarada", 25, 43, 1],
+    [72, "Rampardos Lucario", 22, 44, 0],
+    [73, "Charizard ex Charizard", 50, 42, 0],
+    [74, "Charizard ex Infernape ex", 35, 39, 0],
+    [75, "Rampardos Lycanroc", 36, 41, 1],
+    [76, "Decidueye ex Greninja", 28, 38, 0],
+    [77, "Arceus ex Carnivine", 31, 37, 0],
+    [78, "Toucannon Rampardos", 19, 27, 0],
+    [79, "Solgaleo ex Dialga ex", 20, 32, 0],
+    [80, "Tsareena Celebi ex", 21, 35, 1],
+    [81, "Incineroar ex Toucannon", 17, 29, 5],
+    [82, "Magnezone Pikachu ex", 27, 31, 0],
+    [83, "Dialga ex Arceus ex", 19, 26, 0],
+    [84, "Rayquaza ex Dialga ex", 16, 24, 0],
+    [85, "Garchomp Greninja", 17, 29, 0],
+    [86, "Blastoise ex Blastoise", 14, 25, 0],
+    [87, "Tsareena", 13, 26, 3],
+    [88, "Arceus ex Greninja", 31, 27, 1],
+    [89, "Giratina ex Tapu Lele", 31, 29, 2],
+    [90, "Kabutops Rampardos", 25, 26, 1],
+    [91, "Greninja Pyukumuku", 18, 22, 1],
+    [92, "Serperior Celebi ex", 23, 32, 1],
+    [93, "Garchomp ex", 16, 25, 0],
+    [94, "Garchomp ex Garchomp", 19, 35, 0],
+    [95, "Alolan Raichu ex Oricorio", 10, 21, 6],
+    [96, "Vikavolt Oricorio", 19, 17, 0],
+    [97, "Magnezone Turtonator", 31, 29, 0],
+    [98, "Incineroar ex Salazzle", 24, 31, 1],
+    [99, "Solgaleo ex Giratina ex", 26, 35, 0],
+    [100, "Garchomp ex Aerodactyl ex", 15, 30, 0]
 ];

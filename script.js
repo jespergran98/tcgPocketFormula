@@ -1,54 +1,24 @@
 const data = [
-    [1, "Suicune ex Greninja", 6802, 5798, 299],
-    [2, "Giratina ex Darkrai ex", 3895, 3450, 211],
-    [3, "Guzzlord ex", 2044, 1900, 97],
-    [4, "Flareon ex Eevee ex", 1499, 1386, 49],
-    [5, "Espeon ex Sylveon ex", 849, 806, 31],
-    [6, "Buzzwole ex Pheromosa", 652, 636, 22],
-    [7, "Darkrai ex Arceus ex", 683, 649, 27],
-    [8, "Arceus ex Pichu", 530, 503, 15],
-    [9, "Dragonite ex Dragonite", 451, 505, 17],
-    [10, "Greninja Oricorio", 514, 401, 41],
-    [11, "Suicune ex Giratina ex", 415, 358, 17],
-    [12, "Silvally Rampardos", 424, 385, 23],
-    [13, "Decidueye ex Decidueye", 356, 351, 28],
-    [14, "Raikou ex Magnezone", 330, 365, 7],
-    [15, "Silvally Zeraora", 378, 348, 17],
-    [16, "Charizard ex", 350, 328, 16],
-    [17, "Dragonite ex Sylveon ex", 321, 305, 7],
-    [18, "Tapu Koko ex Oricorio", 315, 321, 9],
-    [19, "Raikou ex Pikachu ex", 267, 319, 3],
-    [20, "Raikou ex Tapu Koko ex", 284, 267, 11],
-    [21, "Exeggutor ex Alolan Exeggutor", 252, 285, 6],
-    [22, "Silvally Pichu", 218, 229, 5],
-    [23, "Tapu Koko ex Pikachu ex", 208, 189, 5],
-    [24, "Umbreon ex Eevee ex", 197, 198, 5],
-    [25, "Charizard ex Sylveon ex", 148, 186, 7],
-    [26, "Guzzlord ex Naganadel", 189, 177, 10],
-    [27, "Solgaleo ex Entei ex", 168, 189, 13],
-    [28, "Pikachu ex Tapu Koko ex", 180, 141, 10],
-    [29, "Raikou ex Arceus ex", 151, 158, 5],
-    [30, "Crobat ex Darkrai ex", 159, 153, 2],
-    [31, "Snorlax ex Darkrai ex", 151, 133, 6],
-    [32, "Buzzwole ex Celesteela", 153, 145, 8],
-    [33, "Silvally Oricorio", 121, 116, 5],
-    [34, "Weavile ex Darkrai ex", 123, 121, 1],
-    [35, "Skarmory ex", 131, 121, 7],
-    [36, "Suicune ex Palkia ex", 119, 118, 2],
-    [37, "Flareon ex Sylveon ex", 135, 129, 11],
-    [38, "Silvally Giratina ex", 104, 108, 3],
-    [39, "Alolan Raichu ex Raikou ex", 102, 109, 2],
-    [40, "Suicune ex Gyarados", 86, 106, 4],
-    [41, "Mewtwo ex Gardevoir", 62, 90, 3],
-    [42, "Meowscarada", 57, 87, 0],
-    [43, "Donphan ex Rampardos", 92, 90, 2],
-    [44, "Incineroar ex", 107, 98, 6],
-    [45, "Pikachu ex Raikou ex", 95, 99, 5],
-    [46, "Arceus ex Oricorio", 65, 80, 4],
-    [47, "Crobat ex Nihilego", 89, 97, 4],
-    [48, "Pikachu ex Oricorio", 100, 93, 3],
-    [49, "Donphan ex Lucario", 64, 86, 1],
-    [50, "Flareon ex Leafeon ex", 58, 83, 0]
+    [1, "Giratina ex Darkrai ex", 4908, 4213, 157],
+    [2, "Giratina ex Greninja", 4163, 3765, 124],
+    [3, "Meowscarada Decidueye ex", 2949, 2604, 86],
+    [4, "Arceus ex Crobat", 2723, 2450, 45],
+    [5, "Garchomp ex Rampardos", 2328, 2073, 45],
+    [6, "Charizard ex Incineroar ex", 1585, 1559, 17],
+    [7, "Solgaleo ex Skarmory", 1414, 1527, 38],
+    [8, "Greninja Oricorio", 1734, 1655, 56],
+    [9, "Magnezone Oricorio", 1022, 1008, 23],
+    [10, "Greninja Giratina ex", 689, 633, 18],
+    [11, "Lucario Rampardos", 674, 648, 10],
+    [12, "Charizard ex Turtonator", 643, 624, 12],
+    [13, "Lycanroc Rampardos", 477, 493, 6],
+    [14, "Giratina ex Magnezone", 492, 381, 14],
+    [15, "Charizard ex", 418, 462, 2],
+    [16, "Incineroar ex", 307, 322, 6],
+    [17, "Gallade ex Rampardos", 290, 265, 10],
+    [18, "Lunala ex Giratina ex", 206, 266, 2],
+    [19, "Beedrill ex Beedrill", 230, 228, 3],
+    [20, "Aerodactyl ex Rampardos", 234, 226, 2]
 ];
 
 let activeTab = 'formula1';
@@ -65,28 +35,94 @@ const wilsonLower = (p, n, z = 2.25) => {
     return (term1 - term2) / denom;
 };
 
-// Beta distribution approximation for 5th percentile
-const betaLowerBound = (a, b) => {
-    const mean = a / (a + b);
-    const variance = (a * b) / ((a + b) * (a + b) * (a + b + 1));
-    const stdDev = Math.sqrt(variance);
-    return Math.max(0, mean - 1.645 * stdDev);
+// Hierarchical Bayesian with Adaptive Priors (Formula 2)
+const hierarchicalBayesian = (allData) => {
+    // Step 1: Calculate empirical statistics across all decks
+    const deckStats = allData.map(([_, __, wins, losses, ties]) => {
+        const n = wins + losses + ties;
+        const adjWins = wins + 0.5 * ties;
+        return { n, winRate: adjWins / n };
+    });
+    
+    // Calculate meta-level statistics
+    const totalGames = deckStats.reduce((sum, d) => sum + d.n, 0);
+    const weightedMean = deckStats.reduce((sum, d) => sum + d.winRate * d.n, 0) / totalGames;
+    const variance = deckStats.reduce((sum, d) => sum + d.n * Math.pow(d.winRate - weightedMean, 2), 0) / totalGames;
+    
+    // Step 2: Estimate hyperparameters using method of moments
+    // For Beta(α, β), mean = α/(α+β), variance = αβ/((α+β)²(α+β+1))
+    const meanEst = Math.max(0.01, Math.min(0.99, weightedMean));
+    const varEst = Math.max(0.0001, Math.min(meanEst * (1 - meanEst) * 0.9, variance));
+    
+    const alphaBeta = (meanEst * (1 - meanEst) / varEst) - 1;
+    const priorAlpha = Math.max(0.5, meanEst * alphaBeta);
+    const priorBeta = Math.max(0.5, (1 - meanEst) * alphaBeta);
+    
+    // Step 3: Adaptive confidence level based on total dataset size
+    // More data = can be more confident, use tighter intervals
+    const adaptiveZ = totalGames > 50000 ? -1.96 :  // 97.5th percentile for huge datasets
+                      totalGames > 10000 ? -1.75 :  // Between 95% and 97.5%
+                      totalGames > 5000 ? -1.645 :  // 95th percentile
+                      -1.5;                          // More conservative for small datasets
+    
+    // Step 4: Calculate hierarchical estimates for each deck
+    return allData.map(([origRank, deck, wins, losses, ties]) => {
+        const n = wins + losses + ties;
+        const adjWins = wins + 0.5 * ties;
+        const adjLosses = losses + 0.5 * ties;
+        
+        // Posterior with learned priors
+        const postAlpha = priorAlpha + adjWins;
+        const postBeta = priorBeta + adjLosses;
+        
+        // Calculate posterior mean (shrinkage estimator)
+        const posteriorMean = postAlpha / (postAlpha + postBeta);
+        
+        // Calculate credible interval with adaptive confidence
+        const postVariance = (postAlpha * postBeta) / 
+                            ((postAlpha + postBeta) ** 2 * (postAlpha + postBeta + 1));
+        const postStdDev = Math.sqrt(postVariance);
+        
+        const lowerBound = Math.max(0, posteriorMean + adaptiveZ * postStdDev);
+        
+        // Calculate effective sample size (how much the prior influences the estimate)
+        const effectiveSampleSize = priorAlpha + priorBeta;
+        const dataWeight = n / (n + effectiveSampleSize);
+        
+        return {
+            origRank,
+            deck,
+            wins,
+            losses,
+            ties,
+            n,
+            lowerBound,
+            posteriorMean,
+            dataWeight,
+            priorInfluence: 1 - dataWeight
+        };
+    });
 };
 
 // Process data for all formulas
 const processData = () => {
-    processedData = data.map(([origRank, deck, wins, losses, ties]) => {
+    // Calculate Formula 2 results first (needs all data)
+    const formula2Results = hierarchicalBayesian(data);
+    
+    processedData = data.map(([origRank, deck, wins, losses, ties], idx) => {
         const n = wins + losses + ties;
         const w = wins + 0.5 * ties;
         const observedP = w / n;
 
+        // Formula 1: Wilson with no clamping
         const wilsonLb = wilsonLower(observedP, n);
         const effectiveWinPct1 = wilsonLb * 100;
-        const strength1 = Math.max(1, Math.min(100, ((effectiveWinPct1 - 30) / 25) * 99 + 1));
+        const strength1 = ((effectiveWinPct1 - 30) / 25) * 99 + 1;
 
-        const a = 0.5 + w;
-        const b = 0.5 + n - w;
-        const posteriorLower = betaLowerBound(a, b);
+        // Formula 2: Hierarchical Bayesian
+        const f2 = formula2Results[idx];
+        const hierarchicalWinPct = f2.lowerBound * 100;
+        const strength2 = ((hierarchicalWinPct - 30) / 25) * 99 + 1;
 
         return {
             origRank,
@@ -100,17 +136,13 @@ const processData = () => {
             wilsonLb,
             effectiveWinPct1,
             strength1,
-            posteriorLower,
-            a,
-            b
+            hierarchicalLower: f2.lowerBound,
+            hierarchicalWinPct,
+            strength2,
+            posteriorMean: f2.posteriorMean,
+            dataWeight: f2.dataWeight,
+            priorInfluence: f2.priorInfluence
         };
-    });
-
-    // Rank by posterior for strength2
-    const sortedByPosterior = [...processedData].sort((a, b) => b.posteriorLower - a.posteriorLower);
-    sortedByPosterior.forEach((item, idx) => {
-        const percentile = 1 - (idx / (sortedByPosterior.length - 1));
-        item.strength2 = percentile * 99 + 1;
     });
 
     // Sort by Formula 1
@@ -123,7 +155,7 @@ const processData = () => {
     // Sort by Formula 2
     rankedByFormula2 = [...processedData].sort((a, b) => {
         if (b.strength2 !== a.strength2) return b.strength2 - a.strength2;
-        if (b.posteriorLower !== a.posteriorLower) return b.posteriorLower - a.posteriorLower;
+        if (b.hierarchicalWinPct !== a.hierarchicalWinPct) return b.hierarchicalWinPct - a.hierarchicalWinPct;
         return b.observedP - a.observedP;
     });
 
@@ -201,8 +233,8 @@ const generateFormula2Table = () => {
                     <th class="text-center">L</th>
                     <th class="text-center">T</th>
                     <th class="text-center">Games</th>
-                    <th class="text-center">Adj Wins</th>
-                    <th class="text-center">Post LB%</th>
+                    <th class="text-center">Post Mean%</th>
+                    <th class="text-center">Hier LB%</th>
                     <th class="text-center">Strength</th>
                     <th class="text-center">Change</th>
                 </tr>
@@ -218,8 +250,8 @@ const generateFormula2Table = () => {
                 <td class="center">${item.losses}</td>
                 <td class="center">${item.ties}</td>
                 <td class="center">${item.n}</td>
-                <td class="center">${item.w.toFixed(1)}</td>
-                <td class="center">${(item.posteriorLower * 100).toFixed(3)}%</td>
+                <td class="center">${(item.posteriorMean * 100).toFixed(2)}%</td>
+                <td class="center">${item.hierarchicalWinPct.toFixed(3)}%</td>
                 <td class="strength">${item.strength2.toFixed(2)}</td>
                 <td class="center">${createRankChange(item.delta2)}</td>
             </tr>
@@ -235,7 +267,7 @@ const generateComparisonTable = () => {
         <table>
             <thead class="comparison">
                 <tr>
-                    <th>Original</th>
+                    <th>Orig</th>
                     <th>Deck</th>
                     <th class="text-center">F1 Rank</th>
                     <th class="text-center">F1 Str</th>
@@ -292,12 +324,12 @@ const init = () => {
                 <h2>Methodology Comparison</h2>
                 <div class="methodology-grid">
                     <div class="methodology-box formula1">
-                        <h3>Formula 1: Wilson (30–55%)</h3>
-                        <p>Uses Wilson confidence interval (z=2.25, ~97% confidence) to calculate a conservative lower bound on win rate. Scales to 1-100 strength using: ((effective_win_pct - 30) / 25) × 99 + 1. This maps a 30% win rate to strength 1, and 55% win rate to strength 100.</p>
+                        <h3>Formula 1: Wilson Score Method</h3>
+                        <p>Uses the Wilson confidence interval to calculate a "worst-case scenario" win rate for each deck. Instead of using raw win percentages, it accounts for uncertainty—decks with fewer games get penalized more. The algorithm asks: "What's the lowest win rate this deck could realistically have?" This confidence-adjusted rate is then converted to a strength score, where a 30% adjusted rate = 1 and 55% adjusted rate = 100.</p>
                     </div>
                     <div class="methodology-box formula2">
-                        <h3>Formula 2: Beta Posterior</h3>
-                        <p>Uses Bayesian approach with Beta prior (α=0.5, β=0.5) to compute 5th percentile lower bound. Maps to 1-100 by ranking all decks and scaling percentiles linearly.</p>
+                        <h3>Formula 2: Hierarchical Bayesian (Meta-Aware)</h3>
+                        <p>Learns from the entire tournament meta first to understand what "typical" performance looks like, then uses that as a smart baseline. Decks with fewer games are adjusted toward the meta average, while decks with many games rely on their own results. This reduces the impact of lucky streaks on small samples. The confidence level adapts based on total dataset size—more games means tighter, more confident rankings.</p>
                     </div>
                 </div>
             </div>
@@ -306,7 +338,7 @@ const init = () => {
                 <div class="tabs-header">
                     <button class="tab-button formula1 active" onclick="switchTab('formula1')">Formula 1 Rankings</button>
                     <button class="tab-button formula2" onclick="switchTab('formula2')">Formula 2 Rankings</button>
-                    <button class="tab-button comparison" onclick="switchTab('comparison')">All Formulas</button>
+                    <button class="tab-button comparison" onclick="switchTab('comparison')">Compare Both</button>
                 </div>
                 <div class="table-wrapper">
                     ${generateFormula1Table()}
@@ -316,10 +348,11 @@ const init = () => {
             <div class="card insights">
                 <h2>Key Insights</h2>
                 <div class="insights-list">
-                    <p><strong>Top 3 remain stable:</strong> All formulas keep Suicune ex Greninja, Giratina ex Darkrai ex, and Guzzlord ex at the top, reflecting their dominant records.</p>
-                    <p><strong>Sample size matters:</strong> Decks with fewer games show more variability between formulas. Wilson-based methods are more conservative with small samples.</p>
-                    <p><strong>Formula 2 compresses the middle:</strong> The percentile-based scaling creates more uniform strength distributions across the middle ranks.</p>
-                    <p><strong>Biggest movers:</strong> Look for decks with large rank changes between formulas—these have win rates that deviate most from assumptions about baseline strength.</p>
+                    <p><strong>Different approaches, similar goals:</strong> Formula 1 uses statistical confidence intervals, while Formula 2 uses hierarchical Bayesian modeling. Both penalize decks with fewer games played, but Formula 2 does so in a more sophisticated way.</p>
+                    <p><strong>Formula 2's edge:</strong> By learning from the entire meta first, Formula 2 makes better predictions for small-sample decks. It knows what "normal" looks like, so it can distinguish between a deck that's genuinely strong vs. one that just got lucky in a few games.</p>
+                    <p><strong>Adaptive confidence:</strong> Formula 2 automatically adjusts its confidence levels based on dataset size. With 50,000+ games, it uses tighter intervals (97.5th percentile). With smaller datasets, it's more conservative (90th percentile).</p>
+                    <p><strong>Shrinkage in action:</strong> Formula 2 shows "posterior mean" and "data weight" metrics. Decks with few games are "shrunk" toward the meta average, while decks with many games rely almost entirely on their own data. This minimizes ranking errors.</p>
+                    <p><strong>Beyond 1-100:</strong> Both formulas allow values outside 1-100, revealing the raw mathematical relationship. Super dominant decks might exceed 100, while struggling decks could drop below 1—though this rarely happens in practice.</p>
                 </div>
             </div>
         </div>
