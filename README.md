@@ -1,14 +1,14 @@
 
-S+++ = 100+ (Exceptional/Perfect)
-S++ = 98 - 100 (Near Perfect)
-S+ = 95 - 98 (Outstanding)
+X = 100+ (Transcendent)
+S++ = 98 - 100 (Phenomenal)
+S+ = 95 - 98 (Elite)
 S = 92 - 95 (Excellent)
 A = 88 - 92 (Very Good)
 B = 84 - 88 (Good)
 C = 80 - 84 (Above Average)
 D = 75 - 80 (Average)
 E = 70 - 75 (Below Average)
-F = 65 - 70 (Poor)
+F = 65 - 70 (Bad)
 Unranked = Below 65 (Insufficient/Unqualified)
 
 Formula 2:
