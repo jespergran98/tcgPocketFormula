@@ -1,24 +1,54 @@
 const data = [
-  [1, "Suicune ex Greninja", 266, 272, 6],
-  [2, "Charizard ex", 86, 115, 0],
-  [3, "Flareon ex Eevee ex", 104, 123, 3],
-  [4, "Giratina ex Darkrai ex", 84, 92, 2],
-  [5, "Greninja Oricorio", 83, 50, 6],
-  [6, "Guzzlord ex", 40, 41, 2],
-  [7, "Tapu Koko ex Pikachu ex", 28, 24, 0],
-  [8, "Pikachu ex Tapu Koko ex", 26, 19, 0],
-  [9, "Suicune ex Palkia ex", 21, 18, 0],
-  [10, "Snorlax ex Darkrai ex", 16, 14, 0],
-  [11, "Dragonite ex Dragonite", 15, 18, 0],
-  [12, "Crobat ex Darkrai ex", 11, 18, 0],
-  [13, "Silvally Zeraora", 22, 12, 1],
-  [14, "Darkrai ex Arceus ex", 20, 12, 0],
-  [15, "Decidueye ex Decidueye", 8, 11, 0],
-  [16, "Flareon ex Flareon", 12, 9, 0],
-  [17, "Dragonite ex Sylveon ex", 9, 7, 0],
-  [18, "Espeon ex Sylveon ex", 14, 11, 0],
-  [19, "Raichu ex Alolan Raichu ex", 10, 8, 0],
-  [20, "Tapu Koko ex Oricorio", 5, 6, 0]
+    [1, "Suicune ex Greninja", 6802, 5798, 299],
+    [2, "Giratina ex Darkrai ex", 3895, 3450, 211],
+    [3, "Guzzlord ex", 2044, 1900, 97],
+    [4, "Flareon ex Eevee ex", 1499, 1386, 49],
+    [5, "Espeon ex Sylveon ex", 849, 806, 31],
+    [6, "Buzzwole ex Pheromosa", 652, 636, 22],
+    [7, "Darkrai ex Arceus ex", 683, 649, 27],
+    [8, "Arceus ex Pichu", 530, 503, 15],
+    [9, "Dragonite ex Dragonite", 451, 505, 17],
+    [10, "Greninja Oricorio", 514, 401, 41],
+    [11, "Suicune ex Giratina ex", 415, 358, 17],
+    [12, "Silvally Rampardos", 424, 385, 23],
+    [13, "Decidueye ex Decidueye", 356, 351, 28],
+    [14, "Raikou ex Magnezone", 330, 365, 7],
+    [15, "Silvally Zeraora", 378, 348, 17],
+    [16, "Charizard ex", 350, 328, 16],
+    [17, "Dragonite ex Sylveon ex", 321, 305, 7],
+    [18, "Tapu Koko ex Oricorio", 315, 321, 9],
+    [19, "Raikou ex Pikachu ex", 267, 319, 3],
+    [20, "Raikou ex Tapu Koko ex", 284, 267, 11],
+    [21, "Exeggutor ex Alolan Exeggutor", 252, 285, 6],
+    [22, "Silvally Pichu", 218, 229, 5],
+    [23, "Tapu Koko ex Pikachu ex", 208, 189, 5],
+    [24, "Umbreon ex Eevee ex", 197, 198, 5],
+    [25, "Charizard ex Sylveon ex", 148, 186, 7],
+    [26, "Guzzlord ex Naganadel", 189, 177, 10],
+    [27, "Solgaleo ex Entei ex", 168, 189, 13],
+    [28, "Pikachu ex Tapu Koko ex", 180, 141, 10],
+    [29, "Raikou ex Arceus ex", 151, 158, 5],
+    [30, "Crobat ex Darkrai ex", 159, 153, 2],
+    [31, "Snorlax ex Darkrai ex", 151, 133, 6],
+    [32, "Buzzwole ex Celesteela", 153, 145, 8],
+    [33, "Silvally Oricorio", 121, 116, 5],
+    [34, "Weavile ex Darkrai ex", 123, 121, 1],
+    [35, "Skarmory ex", 131, 121, 7],
+    [36, "Suicune ex Palkia ex", 119, 118, 2],
+    [37, "Flareon ex Sylveon ex", 135, 129, 11],
+    [38, "Silvally Giratina ex", 104, 108, 3],
+    [39, "Alolan Raichu ex Raikou ex", 102, 109, 2],
+    [40, "Suicune ex Gyarados", 86, 106, 4],
+    [41, "Mewtwo ex Gardevoir", 62, 90, 3],
+    [42, "Meowscarada", 57, 87, 0],
+    [43, "Donphan ex Rampardos", 92, 90, 2],
+    [44, "Incineroar ex", 107, 98, 6],
+    [45, "Pikachu ex Raikou ex", 95, 99, 5],
+    [46, "Arceus ex Oricorio", 65, 80, 4],
+    [47, "Crobat ex Nihilego", 89, 97, 4],
+    [48, "Pikachu ex Oricorio", 100, 93, 3],
+    [49, "Donphan ex Lucario", 64, 86, 1],
+    [50, "Flareon ex Leafeon ex", 58, 83, 0]
 ];
 
 const STATE = {
@@ -92,8 +122,12 @@ const hierarchicalBayesian = (allData) => {
     });
 };
 
+
 // Convert win percentage to strength score
-const calculateStrength = (winPct) => ((winPct - 30) / 25) * 99 + 1;
+// Maps ~0-100% win rate to 0-100 strength score, with 50% = 50 points
+const calculateStrength = (winPct) => {
+    return winPct * 1.8;
+};
 
 // Process and rank all data
 const processData = () => {
