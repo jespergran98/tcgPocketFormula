@@ -697,51 +697,67 @@ const TEMPLATES = [
     id: 11,
     name: "Burst Damage",
     requirements: {
-      adjustedWinRate: { min: 55.00 },
-      share: { max: 1.50 }
+      adjustedWinRate: { min: 57.00 },
+      share: { max: 0.30 },
+      matches: { max: 8 }
     },
-    template: "{deck_name} delivers Burst Damage — striking with lethal {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {share}% of the meta. Rating: {strength} ({tier}). Explosive power with limited consistency creates high-variance potential for those seeking big upside."
+    template: "{deck_name} delivers Burst Damage — striking with lethal {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {share}% of the meta. Rating: {strength} ({tier}). Explosive power with minimal sample creates extreme high-variance potential for those seeking big upside."
   },
   {
     id: 12,
+    name: "Proven Threat",
+    requirements: {
+      adjustedWinRate: { min: 51.00 },
+      matches: { min: 12, max: 200 },
+      strength: { min: 70.00, max: 84.00 },
+      share: { max: 1.50 }
+    },
+    template: "{deck_name} is a Proven Threat — {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). At just {share}% adoption, this underrated archetype demonstrates real competitive viability with a meaningful sample size. Those who've mastered it understand its true potential."
+  },
+  {
+    id: 13,
     name: "Ace Trainer",
     requirements: {
-      share: { max: 1.30 },
-      avgMatchesPerEntry: { min: 3.00 },
-      strength: { min: 70.00, max: 82.00 }
+      share: { max: 1.50 },
+      avgMatchesPerEntry: { min: 2.50 },
+      strength: { min: 68.00, max: 82.00 },
+      adjustedWinRate: { min: 48.50 }
     },
     template: "{deck_name} belongs to Ace Trainers — a dedicated community pilots it at {share}% of the format, averaging {avg_matches_per_entry} matches per trainer. At {strength} ({tier}), their {adjusted_win_rate}% adjusted win rate across {matches} matches rewards expertise and unwavering commitment."
   },
   {
-    id: 13,
+    id: 14,
     name: "Sleeping Snorlax",
     requirements: {
-      share: { max: 0.50 },
-      adjustedWinRate: { min: 51.00 }
+      share: { max: 0.80 },
+      adjustedWinRate: { min: 50.00, max: 51.99 },
+      strength: { min: 68.00, max: 80.00 },
+      matches: { min: 5 }
     },
     template: "{deck_name} rests as a Sleeping Snorlax at merely {share}% of the meta — a dormant powerhouse waiting to be awakened. Its {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches hints at {strength} ({tier}) potential. The few who've discovered it know its true competitive worth."
   },
   {
-    id: 14,
+    id: 15,
     name: "Perfect Catch",
     requirements: {
-      adjustedWinRate: { min: 68.00 },
-      share: { max: 1 }
+      adjustedWinRate: { min: 65.00 },
+      share: { max: 0.80 },
+      matches: { min: 3, max: 40 }
     },
-    template: "{deck_name} achieved a Perfect Catch: {W}-{L}-{T} for {adjusted_win_rate}% win rate across {matches} matches ({share}% of meta). At {strength} ({tier}), this exceptional performance shows genuine potential—but tournament viability at larger scale remains an open question."
+    template: "{deck_name} achieved a Perfect Catch: {W}-{L}-{T} for {adjusted_win_rate}% win rate across {matches} matches ({share}% of meta). At {strength} ({tier}), this exceptional performance shows genuine potential—but broader tournament viability requires continued success."
   },
   {
-    id: 15,
+    id: 16,
     name: "Devoted Master",
     requirements: {
-      share: { max: 0.60 },
-      avgMatchesPerEntry: { min: 3.00 },
-      strength: { min: 66.00 }
+      share: { max: 0.75 },
+      avgMatchesPerEntry: { min: 3.50 },
+      strength: { min: 66.00, max: 80.00 }
     },
     template: "{deck_name} reflects one trainer's unwavering devotion — existing at only {share}% of the meta yet accumulating {matches} total matches means {avg_matches_per_entry} average matches per entry. Results: {adjusted_win_rate}% win rate at {strength} ({tier}). Such dedication speaks louder than mass popularity."
   },
   {
-    id: 16,
+    id: 17,
     name: "Endurance Runner",
     requirements: {
       avgMatchesPerEntry: { min: 3.80 },
@@ -752,7 +768,7 @@ const TEMPLATES = [
     template: "{deck_name} is built for Endurance — rewarding trainers with stamina and preparation. With {avg_matches_per_entry} average matches per pilot across {matches} total matches at {share}% of the meta, it achieves {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) through consistency and tournament durability."
   },
   {
-    id: 17,
+    id: 18,
     name: "Tactical Counter",
     requirements: {
       share: { min: 0.35, max: 2.00 },
@@ -764,7 +780,7 @@ const TEMPLATES = [
 
   // TIER 5: SOLID MID-TIER (20-35 decks) - COMMON
   {
-    id: 18,
+    id: 19,
     name: "Grinder's Testament",
     requirements: {
       strength: { min: 71.00, max: 81.00 },
@@ -774,7 +790,7 @@ const TEMPLATES = [
     template: "{deck_name} is the Grinder's Testament — {matches} matches at {share}% of the format demonstrate reliable {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Built for the long tournament season, this archetype rewards consistency, preparation, and the relentless hustle of dedicated trainers."
   },
   {
-    id: 19,
+    id: 20,
     name: "Steadfast Guardian",
     requirements: {
       strength: { min: 72.00, max: 79.00 },
@@ -784,7 +800,7 @@ const TEMPLATES = [
     template: "{deck_name} is a Steadfast Guardian at {strength} ({tier}) — delivering {adjusted_win_rate}% adjusted win rate across {matches} matches at just {share}% of the format. Reliable and unpretentious, it proves consistently effective regardless of metagame shifts."
   },
   {
-    id: 20,
+    id: 21,
     name: "Awakening Titan",
     requirements: {
       strength: { min: 77.00, max: 84.00 },
@@ -794,7 +810,7 @@ const TEMPLATES = [
     template: "{deck_name} stirs as an Awakening Titan — only {share}% of trainers have recognized its potential, yet it achieves {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. When this archetype fully awakens, the entire competitive landscape will tremble."
   },
   {
-    id: 21,
+    id: 22,
     name: "Volume Leader",
     requirements: {
       strength: { min: 68.00, max: 78.00 },
@@ -804,7 +820,7 @@ const TEMPLATES = [
     template: "{deck_name} leads through Volume — accumulating {matches} matches at {share}% of the meta demonstrates {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Pilot dedication and consistent tournament attendance keep this archetype alive and relevant in the metagame."
   },
   {
-    id: 22,
+    id: 23,
     name: "Reliable Partner",
     requirements: {
       strength: { min: 80.00, max: 90.00 },
@@ -814,7 +830,7 @@ const TEMPLATES = [
     template: "{deck_name} is the Reliable Partner — {share}% of trainers trust it with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches. Steady results and stable metagame presence prove its worth as a foundational format strategy."
   },
   {
-    id: 23,
+    id: 24,
     name: "Perfect Equilibrium",
     requirements: {
       adjustedWinRate: { min: 48.50, max: 51.50 },
@@ -824,7 +840,7 @@ const TEMPLATES = [
     template: "{deck_name} embodies Perfect Equilibrium at exactly {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches. At {strength} ({tier}) and {share}% of the meta, it represents format balance — neither over nor undervalued, simply fair and honest."
   },
   {
-    id: 24,
+    id: 25,
     name: "Emerging Contender",
     requirements: {
       strength: { min: 68.00, max: 78.00 },
@@ -834,7 +850,7 @@ const TEMPLATES = [
     template: "{deck_name} is an Emerging Contender at {strength} ({tier}) — posting {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta. Early tournament success signals genuine potential; continued performance will reveal if this is a temporary spike or sustainable breakthrough."
   },
   {
-    id: 25,
+    id: 26,
     name: "Master's Tool",
     requirements: {
       strength: { min: 70.00, max: 81.00 },
@@ -846,7 +862,7 @@ const TEMPLATES = [
 
   // TIER 6: INTERESTING FRINGE (30-50 decks) - UNCOMMON
   {
-    id: 26,
+    id: 27,
     name: "Curious Anomaly",
     requirements: {
       share: { min: 0.20, max: 1.50 },
@@ -855,7 +871,7 @@ const TEMPLATES = [
     template: "{deck_name} is a Curious Anomaly — {share}% of the meta with {matches} matches producing {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). This data pattern defies conventional wisdom, suggesting either hidden potential or unusual sample dynamics worth investigating."
   },
   {
-    id: 27,
+    id: 28,
     name: "Metagame Shifter",
     requirements: {
       metaImpact: { min: 180.00 },
@@ -864,7 +880,7 @@ const TEMPLATES = [
     template: "{deck_name} is a Metagame Shifter — generating {meta_impact} meta impact despite {share}% adoption. At {strength} ({tier}) with {adjusted_win_rate}% win rate across {matches} matches, it disproportionately influences how opponents prepare and deckbuild for competition."
   },
   {
-    id: 28,
+    id: 29,
     name: "Swift Strike",
     requirements: {
       avgMatchesPerEntry: { max: 2.50 },
@@ -874,7 +890,7 @@ const TEMPLATES = [
     template: "{deck_name} is a Swift Strike — pilots average only {avg_matches_per_entry} matches per entry, suggesting quick tournament eliminations. {matches} total matches with {adjusted_win_rate}% win rate at {strength} ({tier}). High early impact, brief duration—built for aggressive strategies."
   },
   {
-    id: 29,
+    id: 30,
     name: "Explorer's Path",
     requirements: {
       matchesPercent: { min: 0.15, max: 0.50 },
@@ -885,7 +901,7 @@ const TEMPLATES = [
     template: "{deck_name} follows the Explorer's Path — piloted by adventurous trainers, it accumulates {matches} matches at {share}% adoption. Results of {adjusted_win_rate}% at {strength} ({tier}) suggest potential worth investigating as the format continues to evolve."
   },
   {
-    id: 30,
+    id: 31,
     name: "Format Mystery",
     requirements: {
       matchesPercent: { min: 0.12, max: 0.40 },
@@ -894,7 +910,7 @@ const TEMPLATES = [
     template: "{deck_name} is a Format Mystery — appearing in {matches} matches ({share}% of meta), its {adjusted_win_rate}% performance at {strength} ({tier}) raises intriguing questions about format adaptation, hidden synergies, and metagame evolution."
   },
   {
-    id: 31,
+    id: 32,
     name: "Work in Progress",
     requirements: {
       matchesPercent: { min: 0.12, max: 0.45 },
@@ -903,7 +919,7 @@ const TEMPLATES = [
     template: "{deck_name} is a Work in Progress — {matches} tournament matches at {share}% of the meta show early results. At {strength} ({tier}) with {adjusted_win_rate}% win rate, this emerging archetype is being actively tested, refined, and developed by the innovative community."
   },
   {
-    id: 32,
+    id: 33,
     name: "Believer's Choice",
     requirements: {
       adjustedWinRate: { max: 45.00 },
@@ -915,7 +931,7 @@ const TEMPLATES = [
 
   // TIER 7: EXPERIMENTAL & FRINGE (50-100 decks) - ABUNDANT
   {
-    id: 33,
+    id: 34,
     name: "Untested Prospect",
     requirements: {
       matchesPercent: { max: 0.50 }
@@ -923,7 +939,7 @@ const TEMPLATES = [
     template: "{deck_name} is an Untested Prospect with only {matches} tournament matches ({share}% of meta). At {strength} ({tier}), its {adjusted_win_rate}% record is suggestive but insufficient for definitive assessment. Competitive viability requires further testing and refinement."
   },
   {
-    id: 34,
+    id: 35,
     name: "Fringe Contender",
     requirements: {
       strength: { min: 65.00, max: 76.00 },
@@ -935,7 +951,7 @@ const TEMPLATES = [
 
   // TIER 8: FALLBACK
   {
-    id: 35,
+    id: 36,
     name: "Format Participant",
     requirements: {},
     template: "{deck_name} is represented in the format at {strength} ({tier}) with {share}% metagame share and {adjusted_win_rate}% adjusted win rate across {W}-{L}-{T} ({matches} matches)."
