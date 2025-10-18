@@ -586,377 +586,457 @@ const getTier = (strength) => {
 };
 
 const TEMPLATES = [
-  // TIER 1: ELITE/LEGENDARY (1-2 decks) - EXTREMELY RARE
+  // TIER 0: TRANSCENDENT/GODLIKE (0-1 decks) - ONCE IN A FORMAT
   {
     id: 1,
-    name: "Champion's Throne",
+    name: "Arceus's Judgment",
+    requirements: {
+      strength: { min: 100.00 }
+    },
+    template: "{deck_name} has reached Arceus's Judgment — an unprecedented {strength} ({tier}) that reshapes competitive reality itself. With {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share, this deck wields power beyond the Plates, forcing the format to bend to its divine will. Emergency action inevitable."
+  },
+  {
+    id: 2,
+    name: "Creation Trio Dominance",
+    requirements: {
+      strength: { min: 97.00 },
+      adjustedWinRate: { min: 54.50 },
+      share: { min: 8.00 }
+    },
+    template: "{deck_name} commands Creation Trio Dominance — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Like Dialga, Palkia, and Giratina controlling time, space, and distortion, this deck doesn't merely win tournaments—it erases competition from existence."
+  },
+  {
+    id: 3,
+    name: "Primal Reversion",
+    requirements: {
+      strength: { min: 95.00 },
+      adjustedWinRate: { min: 53.50 },
+      share: { min: 6.00 }
+    },
+    template: "{deck_name} has triggered Primal Reversion — {strength} ({tier}) unleashing ancient, world-altering power. Like Primal Groudon's Desolate Land and Primal Kyogre's Primordial Sea, this {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share changes the very rules of engagement."
+  },
+  {
+    id: 4,
+    name: "Mega Evolution Apex",
+    requirements: {
+      strength: { min: 93.00 },
+      adjustedWinRate: { min: 52.50 },
+      share: { min: 5.00 }
+    },
+    template: "{deck_name} has reached Mega Evolution Apex — the ultimate bond between strategy and execution at {strength} ({tier}). With {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share, this deck has achieved the perfect Mega Stone resonance that defines format peaks."
+  },
+
+  // TIER 1: ELITE/LEGENDARY (1-2 decks) - EXTREMELY RARE
+  {
+    id: 5,
+    name: "Champion's Ace",
     requirements: {
       share: { min: 15.00 },
       adjustedWinRate: { min: 53.00 },
       strength: { min: 92.00 }
     },
-    template: "{deck_name} sits atop the Champion's Throne — dominating {share}% of tournaments with an exceptional {adjusted_win_rate}% adjusted win rate. At {strength} ({tier}), this deck commands the format with the authority of a true Champion, defining the very rules opponents must follow."
+    template: "{deck_name} is the Champion's Ace — the format-defining threat at {share}% meta share with {adjusted_win_rate}% adjusted win rate and {strength} ({tier}). Like Leon's undefeated Charizard or Cynthia's terrifying Garchomp, every serious competitor must build their strategy around defeating this monster."
   },
   {
-    id: 2,
-    name: "Legendary Pokémon",
+    id: 6,
+    name: "Legendary Bird Trio",
     requirements: {
       strength: { min: 88.00 },
       adjustedWinRate: { min: 52.00 },
       share: { min: 4.00 },
       matchesPercent: { min: 1.50 }
     },
-    template: "{deck_name} is Legendary — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. At {share}% of the format, it represents the complete package: powerful, versatile, and consistently proven across the competitive landscape."
+    template: "{deck_name} has earned Legendary Bird Trio status — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Like Articuno, Zapdos, and Moltres guarding their sacred sites, this deck's proven dominance commands respect across the competitive landscape."
   },
 
   // TIER 2: ELITE PERFORMERS (5-8 decks) - VERY RARE
   {
-    id: 3,
-    name: "Unstoppable Force",
+    id: 7,
+    name: "Dragonite Rush",
     requirements: {
       adjustedWinRate: { min: 57.00 },
-      strength: { min: 84.00 }
+      strength: { min: 80.00 },
+      matchesPercent: { max: 3 }
     },
-    template: "{deck_name} is an Unstoppable Force — an extraordinary {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches. At {strength} ({tier}) with {share}% of the meta, this archetype's dominance is undeniable and backed by substantial tournament data."
+    template: "{deck_name} delivers Dragonite Rush — an explosive {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) at {strength} ({tier}) across {matches} matches. At {share}% meta share, it strikes with Lance's signature devastation, though limited data leaves questions about sustained dominance."
   },
   {
-    id: 4,
-    name: "Format Pillar",
+    id: 8,
+    name: "Gym Leader Pillar",
     requirements: {
       share: { min: 5.00 },
       strength: { min: 83.00 },
       adjustedWinRate: { min: 50.00 }
     },
-    template: "{deck_name} stands as the Format Pillar — representing {share}% of competitive play at {strength} ({tier}). With {adjusted_win_rate}% adjusted win rate across {matches} matches, this anchor defines the metagame. Every serious trainer builds their strategy around or against it."
+    template: "{deck_name} stands as a Gym Leader Pillar — {share}% meta share at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. Like Pewter City's Brock or Saffron's Sabrina, this immovable force shapes how every trainer approaches the format's gauntlet."
   },
   {
-    id: 5,
-    name: "Breakthrough Evolution",
+    id: 9,
+    name: "Gyarados Evolution",
     requirements: {
       strength: { min: 81.00, max: 87.00 },
       adjustedWinRate: { min: 50.50, max: 56.99 },
       share: { min: 1.50, max: 5.00 }
     },
-    template: "{deck_name} has undergone a Breakthrough Evolution — emerging with {strength} ({tier}) performance and {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. The competitive community is taking notice of this archetype's explosive potential."
+    template: "{deck_name} underwent Gyarados Evolution — transformed from overlooked to overwhelming at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. At {share}% meta share, this Magikarp-to-Gyarados breakthrough proves patient optimization creates serpentine terror."
   },
 
   // TIER 3: STRONG PERFORMERS (8-12 decks) - RARE
   {
-    id: 6,
-    name: "Hidden Gem",
+    id: 10,
+    name: "Shiny Encounter",
     requirements: {
       share: { max: 2.50 },
       strength: { min: 86.00 },
       adjustedWinRate: { min: 52.00 }
     },
-    template: "{deck_name} is a Hidden Gem — overlooked at just {share}% adoption, yet it delivers {strength} ({tier}) performance with {adjusted_win_rate}% adjusted win rate across {matches} matches. Those who've discovered it possess a secret weapon that few opponents see coming."
+    template: "{deck_name} is a Shiny Encounter — exceptionally rare at {share}% adoption but gleaming at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. Like spotting a shiny in the wild, those who've mastered it possess something truly extraordinary."
   },
   {
-    id: 7,
-    name: "Rising Star",
+    id: 11,
+    name: "Victory Road Climber",
     requirements: {
       share: { min: 2.50, max: 6.00 },
       strength: { min: 80.00, max: 86.00 },
       adjustedWinRate: { min: 50.00 }
     },
-    template: "{deck_name} is a Rising Star — {share}% of trainers have adopted it with {strength} ({tier}) results and {adjusted_win_rate}% adjusted win rate across {matches} matches. Tournament success is building momentum for what could become the next dominant force."
+    template: "{deck_name} climbs Victory Road — {share}% adoption with {strength} ({tier}) and {adjusted_win_rate}% adjusted win rate across {matches} matches. Like a rising trainer conquering that final cave before the Elite Four, this deck's momentum suggests championship potential awaits."
   },
   {
-    id: 8,
-    name: "Type Advantage Master",
+    id: 12,
+    name: "Super Effective Strike",
     requirements: {
       adjustedWinRate: { min: 54.00, max: 67.00 },
       strength: { min: 79.00, max: 85.00 },
       share: { max: 2.00 }
     },
-    template: "{deck_name} is a Type Advantage Master — posting {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). At only {share}% of the meta, this deck's surgical precision against key matchups makes it devastatingly effective in skilled hands."
+    template: "{deck_name} lands Super Effective Strikes — {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) at {strength} ({tier}) across {matches} matches. At just {share}% meta share, this deck exploits type matchups like Starmie demolishing Charizard, devastatingly effective against key threats."
   },
   {
-    id: 9,
-    name: "Tournament Essential",
+    id: 13,
+    name: "Professor Oak's Research",
     requirements: {
       strength: { min: 78.00, max: 85.00 },
       share: { min: 1.00, max: 3.50 },
       adjustedWinRate: { min: 49.50 }
     },
-    template: "{deck_name} is Tournament Essential at {strength} ({tier}) — consistently appearing in competitive play with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Reliable performance and proven consistency make it invaluable to serious trainers."
+    template: "{deck_name} represents Professor Oak's Research — time-tested reliability at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Like the Professor's original Kanto starters, this proven partner thrives through format evolution and metagame shifts."
   },
 
   // TIER 4: HIGH PERFORMERS (10-20 decks) - UNCOMMON
   {
-    id: 10,
-    name: "Specialist's Domain",
+    id: 14,
+    name: "Type Specialist Master",
     requirements: {
       share: { min: 0.40, max: 2.00 },
       strength: { min: 72.00, max: 82.00 },
       adjustedWinRate: { min: 49.00 }
     },
-    template: "{deck_name} is a Specialist's Domain — {share}% of trainers have mastered it at {strength} ({tier}). With {adjusted_win_rate}% adjusted win rate across {matches} matches, it proves that deep preparation and focused expertise yield consistent competitive excellence."
+    template: "{deck_name} achieves Type Specialist Mastery — {share}% of trainers have perfected it to {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. Like Erika's Grass shrine or Blaine's volcanic arena, focused dedication to a single strategy yields expert-level results."
   },
   {
-    id: 11,
-    name: "Burst Damage",
+    id: 15,
+    name: "Focus Energy Critical",
     requirements: {
       adjustedWinRate: { min: 57.00 },
       share: { max: 0.30 },
       matches: { max: 8 }
     },
-    template: "{deck_name} delivers Burst Damage — striking with lethal {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {share}% of the meta. Rating: {strength} ({tier}). Explosive power with minimal sample creates extreme high-variance potential for those seeking big upside."
+    template: "{deck_name} strikes with Focus Energy Criticals — {adjusted_win_rate}% win rate ({W}-{L}-{T}) at {strength} ({tier}) across {matches} matches and {share}% meta share. Like Persian's Slash landing critical hits, this explosive potential comes with variance risk from limited sample size."
   },
   {
-    id: 12,
-    name: "Proven Threat",
+    id: 16,
+    name: "Dunsparce Surprise",
     requirements: {
       adjustedWinRate: { min: 51.00 },
       matches: { min: 12, max: 200 },
       strength: { min: 70.00, max: 84.00 },
       share: { max: 1.50 }
     },
-    template: "{deck_name} is a Proven Threat — {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). At just {share}% adoption, this underrated archetype demonstrates real competitive viability with a meaningful sample size. Those who've mastered it understand its true potential."
+    template: "{deck_name} delivers a Dunsparce Surprise — {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) at {strength} ({tier}) across {matches} matches with only {share}% adoption. Like the underestimated Land Snake Pokémon, those who look past its unassuming exterior discover legitimate competitive power."
   },
   {
-    id: 13,
-    name: "Ace Trainer",
+    id: 17,
+    name: "Bond Phenomenon",
     requirements: {
       share: { max: 1.50 },
       avgMatchesPerEntry: { min: 2.50 },
       strength: { min: 68.00, max: 82.00 },
       adjustedWinRate: { min: 48.50 }
     },
-    template: "{deck_name} belongs to Ace Trainers — a dedicated community pilots it at {share}% of the format, averaging {avg_matches_per_entry} matches per trainer. At {strength} ({tier}), their {adjusted_win_rate}% adjusted win rate across {matches} matches rewards expertise and unwavering commitment."
+    template: "{deck_name} creates a Bond Phenomenon — {share}% of pilots average {avg_matches_per_entry} matches each, demonstrating Ash-Greninja-level synchronization. At {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches, mastery of this partnership unlocks hidden potential."
   },
   {
-    id: 14,
-    name: "Sleeping Snorlax",
+    id: 18,
+    name: "Resting Snorlax",
     requirements: {
       share: { max: 0.80 },
       adjustedWinRate: { min: 50.00, max: 51.99 },
       strength: { min: 68.00, max: 80.00 },
       matches: { min: 5 }
     },
-    template: "{deck_name} rests as a Sleeping Snorlax at merely {share}% of the meta — a dormant powerhouse waiting to be awakened. Its {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches hints at {strength} ({tier}) potential. The few who've discovered it know its true competitive worth."
+    template: "{deck_name} rests as a Snorlax — dormant at {share}% meta share yet achieving {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). Like Route 12's sleeping giant, this powerhouse awaits someone to play the Poké Flute and unleash its full strength."
   },
   {
-    id: 15,
-    name: "Perfect Catch",
+    id: 19,
+    name: "Master Ball Success",
     requirements: {
       adjustedWinRate: { min: 65.00 },
       share: { max: 0.80 },
       matches: { min: 3, max: 40 }
     },
-    template: "{deck_name} achieved a Perfect Catch: {W}-{L}-{T} for {adjusted_win_rate}% win rate across {matches} matches ({share}% of meta). At {strength} ({tier}), this exceptional performance shows genuine potential—but broader tournament viability requires continued success."
+    template: "{deck_name} achieved Master Ball Success — {W}-{L}-{T} for {adjusted_win_rate}% win rate at {strength} ({tier}) across {matches} matches and {share}% meta share. This guaranteed capture rate suggests real potential, but like catching Mewtwo, sustaining excellence requires proving it's skill, not luck."
   },
   {
-    id: 16,
-    name: "Devoted Master",
+    id: 20,
+    name: "Elite Four Dedication",
     requirements: {
       share: { max: 0.75 },
       avgMatchesPerEntry: { min: 3.50 },
       strength: { min: 66.00, max: 80.00 }
     },
-    template: "{deck_name} reflects one trainer's unwavering devotion — existing at only {share}% of the meta yet accumulating {matches} total matches means {avg_matches_per_entry} average matches per entry. Results: {adjusted_win_rate}% win rate at {strength} ({tier}). Such dedication speaks louder than mass popularity."
+    template: "{deck_name} shows Elite Four Dedication — {share}% meta share but {avg_matches_per_entry} average matches per pilot totaling {matches} games at {strength} ({tier}) with {adjusted_win_rate}% win rate. Like Bruno's Fighting mastery or Agatha's Ghost expertise, single-archetype devotion achieves specialized excellence."
   },
   {
-    id: 17,
-    name: "Endurance Runner",
+    id: 21,
+    name: "Indigo Plateau Marathon",
     requirements: {
       avgMatchesPerEntry: { min: 3.80 },
       strength: { min: 76.00, max: 84.00 },
       share: { max: 2.50 },
       adjustedWinRate: { min: 49.00 }
     },
-    template: "{deck_name} is built for Endurance — rewarding trainers with stamina and preparation. With {avg_matches_per_entry} average matches per pilot across {matches} total matches at {share}% of the meta, it achieves {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) through consistency and tournament durability."
+    template: "{deck_name} runs the Indigo Plateau Marathon — {avg_matches_per_entry} average matches per pilot across {matches} total at {share}% meta share with {adjusted_win_rate}% adjusted win rate and {strength} ({tier}). Like the journey from Pallet Town to Champion, this deck rewards preparation and endurance."
   },
   {
-    id: 18,
-    name: "Tactical Counter",
+    id: 22,
+    name: "Type Advantage Tactician",
     requirements: {
       share: { min: 0.35, max: 2.00 },
       adjustedWinRate: { min: 49.00 },
       strength: { min: 72.00, max: 81.00 }
     },
-    template: "{deck_name} is a Tactical Counter — only {share}% of trainers employ it, but {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches makes it a devastating pocket pick. Built to exploit critical vulnerabilities in the current metagame."
+    template: "{deck_name} is a Type Advantage Tactician — {share}% adoption with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches. Like choosing Squirtle to sweep Brock's Rock Gym, smart pilots deploy this deck when the metagame matchup chart favors its strengths."
   },
 
   // TIER 5: SOLID MID-TIER (20-35 decks) - COMMON
   {
-    id: 19,
-    name: "Grinder's Testament",
+    id: 23,
+    name: "Pikachu's Persistence",
     requirements: {
       strength: { min: 71.00, max: 81.00 },
       adjustedWinRate: { min: 48.50 },
       share: { min: 0.70, max: 3.50 }
     },
-    template: "{deck_name} is the Grinder's Testament — {matches} matches at {share}% of the format demonstrate reliable {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Built for the long tournament season, this archetype rewards consistency, preparation, and the relentless hustle of dedicated trainers."
+    template: "{deck_name} shows Pikachu's Persistence — {matches} matches at {share}% meta share with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Like Ash's partner refusing evolution, this deck stays true to fundamentals and rewards pilots who grind through the season with consistent dedication."
   },
   {
-    id: 20,
-    name: "Steadfast Guardian",
+    id: 24,
+    name: "Reliable Starter",
     requirements: {
       strength: { min: 72.00, max: 79.00 },
       adjustedWinRate: { min: 48.50 },
       share: { min: 0.40, max: 1.50 }
     },
-    template: "{deck_name} is a Steadfast Guardian at {strength} ({tier}) — delivering {adjusted_win_rate}% adjusted win rate across {matches} matches at just {share}% of the format. Reliable and unpretentious, it proves consistently effective regardless of metagame shifts."
+    template: "{deck_name} is a Reliable Starter — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Like Bulbasaur, Charmander, or Squirtle in Professor Oak's lab, this dependable partner delivers stable performance regardless of format weather."
   },
   {
-    id: 21,
-    name: "Awakening Titan",
+    id: 25,
+    name: "Wailord Surfacing",
     requirements: {
       strength: { min: 77.00, max: 84.00 },
       share: { min: 0.50, max: 2.20 },
       adjustedWinRate: { min: 49.00 }
     },
-    template: "{deck_name} stirs as an Awakening Titan — only {share}% of trainers have recognized its potential, yet it achieves {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. When this archetype fully awakens, the entire competitive landscape will tremble."
+    template: "{deck_name} is Wailord Surfacing — {share}% adoption yet {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. Like the Float Whale Pokémon breaching after deep-sea dwelling, when this massive archetype fully emerges, it will displace everything around it."
   },
   {
-    id: 22,
-    name: "Volume Leader",
+    id: 26,
+    name: "Eevee's Potential",
     requirements: {
       strength: { min: 68.00, max: 78.00 },
-      share: { min: 0.50, max: 2.00 },
-      adjustedWinRate: { min: 47.50 }
+      share: { min: 0.50, max: 5.00 },
+      adjustedWinRate: { min: 44.00 }
     },
-    template: "{deck_name} leads through Volume — accumulating {matches} matches at {share}% of the meta demonstrates {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Pilot dedication and consistent tournament attendance keep this archetype alive and relevant in the metagame."
+    template: "{deck_name} carries Eevee's Potential — {matches} matches at {share}% meta share with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Like the Evolution Pokémon's eight different paths, pilot creativity and dedication keep evolving this beloved archetype's tournament presence."
   },
   {
-    id: 23,
-    name: "Reliable Partner",
+    id: 27,
+    name: "Rare Candy Staple",
     requirements: {
-      strength: { min: 80.00, max: 90.00 },
+      strength: { min: 78.00, max: 90.00 },
       share: { min: 2.00, max: 6.00 },
-      adjustedWinRate: { min: 50.00, max: 53.00 }
+      adjustedWinRate: { min: 46.00, max: 53.00 }
     },
-    template: "{deck_name} is the Reliable Partner — {share}% of trainers trust it with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches. Steady results and stable metagame presence prove its worth as a foundational format strategy."
+    template: "{deck_name} is a Rare Candy Staple — {share}% of trainers trust it with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches. Like the instant evolution item in every competitive deck, this foundational strategy shapes how the format operates."
   },
   {
-    id: 24,
-    name: "Perfect Equilibrium",
+    id: 28,
+    name: "Ho-Oh's Balance",
     requirements: {
       adjustedWinRate: { min: 48.50, max: 51.50 },
       strength: { min: 67.00, max: 77.00 },
       share: { min: 0.60, max: 3.00 }
     },
-    template: "{deck_name} embodies Perfect Equilibrium at exactly {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches. At {strength} ({tier}) and {share}% of the meta, it represents format balance — neither over nor undervalued, simply fair and honest."
+    template: "{deck_name} achieves Ho-Oh's Balance — {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) at {strength} ({tier}) across {matches} matches and {share}% meta share. Like the Rainbow Pokémon's seven-colored wings representing perfect harmony, this deck exists in competitive equilibrium."
   },
   {
-    id: 25,
-    name: "Emerging Contender",
+    id: 29,
+    name: "Regional Form Adaptation",
     requirements: {
-      strength: { min: 68.00, max: 78.00 },
-      adjustedWinRate: { min: 47.00 },
-      share: { min: 0.40, max: 2.00 }
+      strength: { min: 68.00, max: 82.00 },
+      adjustedWinRate: { min: 44.00 },
+      share: { min: 0.40, max: 3.00 }
     },
-    template: "{deck_name} is an Emerging Contender at {strength} ({tier}) — posting {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta. Early tournament success signals genuine potential; continued performance will reveal if this is a temporary spike or sustainable breakthrough."
+    template: "{deck_name} shows Regional Form Adaptation — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Like Alolan Vulpix thriving in snowy peaks, early success hints this variant adapted to the format's ecosystem, but longevity remains uncertain."
   },
   {
-    id: 26,
-    name: "Master's Tool",
+    id: 30,
+    name: "Perfect IV Breeding",
     requirements: {
       strength: { min: 70.00, max: 81.00 },
       avgMatchesPerEntry: { min: 3.00 },
       share: { max: 2.00 }
     },
-    template: "{deck_name} is a Master's Tool — it rewards deep knowledge and practice with {strength} ({tier}) performance. Achieving {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta, pilots average {avg_matches_per_entry} matches per entry, proving extended tournament runs by true experts."
+    template: "{deck_name} represents Perfect IV Breeding — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Pilots averaging {avg_matches_per_entry} matches each understand this archetype rewards the patience and expertise of competitive breeding."
   },
 
   // TIER 6: INTERESTING FRINGE (30-50 decks) - UNCOMMON
   {
-    id: 27,
-    name: "Curious Anomaly",
+    id: 31,
+    name: "Unown Message",
     requirements: {
-      share: { min: 0.20, max: 1.50 },
-      strength: { min: 64.00, max: 82.00 }
+      share: { min: 0.12, max: 1.50 },
+      strength: { min: 58.00, max: 82.00 },
+      matchesPercent: { min: 0.05 },
+      adjustedWinRate: { min: 35.00 }
     },
-    template: "{deck_name} is a Curious Anomaly — {share}% of the meta with {matches} matches producing {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). This data pattern defies conventional wisdom, suggesting either hidden potential or unusual sample dynamics worth investigating."
+    template: "{deck_name} spells an Unown Message — {share}% meta share with {matches} matches producing {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Like the Symbol Pokémon's cryptic ruins alphabet, this data pattern defies conventional analysis and intrigues curious theorycrafters."
   },
   {
-    id: 28,
-    name: "Metagame Shifter",
+    id: 32,
+    name: "Ditto Transform Effect",
     requirements: {
       metaImpact: { min: 180.00 },
       strength: { min: 70.00 }
     },
-    template: "{deck_name} is a Metagame Shifter — generating {meta_impact} meta impact despite {share}% adoption. At {strength} ({tier}) with {adjusted_win_rate}% win rate across {matches} matches, it disproportionately influences how opponents prepare and deckbuild for competition."
-  },
-  {
-    id: 29,
-    name: "Swift Strike",
-    requirements: {
-      avgMatchesPerEntry: { max: 2.50 },
-      strength: { max: 73.00 },
-      share: { min: 0.20 }
-    },
-    template: "{deck_name} is a Swift Strike — pilots average only {avg_matches_per_entry} matches per entry, suggesting quick tournament eliminations. {matches} total matches with {adjusted_win_rate}% win rate at {strength} ({tier}). High early impact, brief duration—built for aggressive strategies."
-  },
-  {
-    id: 30,
-    name: "Explorer's Path",
-    requirements: {
-      matchesPercent: { min: 0.15, max: 0.50 },
-      adjustedWinRate: { min: 46.50 },
-      share: { max: 1.00 },
-      strength: { min: 65.00, max: 78.00 }
-    },
-    template: "{deck_name} follows the Explorer's Path — piloted by adventurous trainers, it accumulates {matches} matches at {share}% adoption. Results of {adjusted_win_rate}% at {strength} ({tier}) suggest potential worth investigating as the format continues to evolve."
-  },
-  {
-    id: 31,
-    name: "Format Mystery",
-    requirements: {
-      matchesPercent: { min: 0.12, max: 0.40 },
-      strength: { min: 60.00, max: 75.00 }
-    },
-    template: "{deck_name} is a Format Mystery — appearing in {matches} matches ({share}% of meta), and only a {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) raises intriguing questions about why so many people chose this deck."
-  },
-  {
-    id: 32,
-    name: "Work in Progress",
-    requirements: {
-      matchesPercent: { min: 0.12, max: 0.45 },
-      strength: { min: 62.00, max: 76.00 }
-    },
-    template: "{deck_name} is a Work in Progress — {matches} tournament matches at {share}% of the meta show early results. At {strength} ({tier}) with {adjusted_win_rate}% win rate, this emerging archetype is being actively tested, refined, and developed by the innovative community."
+    template: "{deck_name} creates a Ditto Transform Effect — generating {meta_impact} meta impact despite {share}% adoption with {adjusted_win_rate}% win rate at {strength} ({tier}) across {matches} matches. Like the Transform Pokémon, this deck forces opponents to prepare for it or risk copying their strategy against them."
   },
   {
     id: 33,
-    name: "Believer's Choice",
+    name: "Ninjask Speed Boost",
     requirements: {
-      adjustedWinRate: { max: 45.00 },
-      strength: { min: 58.00, max: 70.00 },
-      share: { min: 0.30 }
+      avgMatchesPerEntry: { max: 2.50 },
+      strength: { max: 73.00 },
+      share: { min: 0.15 },
+      matchesPercent: { min: 0.08 }
     },
-    template: "{deck_name} is backed by devoted Believers — {share}% of trainers continue piloting it despite {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). Passion and unwavering loyalty to potential transcend statistical performance."
+    template: "{deck_name} has Ninjask Speed Boost — {avg_matches_per_entry} average matches per pilot across {matches} total with {adjusted_win_rate}% win rate at {strength} ({tier}). Like the Ninja Pokémon's signature ability, it accelerates quickly in tournaments but struggles to maintain velocity for deep runs."
+  },
+  {
+    id: 34,
+    name: "Safari Zone Find",
+    requirements: {
+      matchesPercent: { min: 0.08, max: 0.50 },
+      adjustedWinRate: { min: 44.00 },
+      share: { min: 0.10, max: 1.00 },
+      strength: { min: 60.00, max: 78.00 }
+    },
+    template: "{deck_name} is a Safari Zone Find — {matches} matches at {share}% adoption with {adjusted_win_rate}% at {strength} ({tier}). Like catching Chansey or Tauros in the tall grass, adventurous trainers testing this archetype believe they've captured something precious before it flees."
+  },
+  {
+    id: 35,
+    name: "Missingno. Glitch",
+    requirements: {
+      matchesPercent: { min: 0.05, max: 0.40 },
+      strength: { min: 55.00, max: 75.00 },
+      adjustedWinRate: { max: 47.00 },
+      share: { min: 0.10 }
+    },
+    template: "{deck_name} is a Missingno. Glitch — {matches} matches ({share}% meta share) with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Like encountering the infamous data corruption, this deck's existence raises unsettling questions about format dynamics that defy logical explanation."
+  },
+  {
+    id: 36,
+    name: "Porygon Upgrade",
+    requirements: {
+      matchesPercent: { min: 0.05, max: 0.45 },
+      strength: { min: 58.00, max: 76.00 },
+      adjustedWinRate: { min: 40.00, max: 52.00 },
+      share: { min: 0.10 }
+    },
+    template: "{deck_name} undergoes Porygon Upgrade — {matches} matches at {share}% meta share with {adjusted_win_rate}% win rate at {strength} ({tier}). Like the Virtual Pokémon receiving patches to become Porygon2, innovative deckbuilders are actively debugging and optimizing this digital archetype."
+  },
+  {
+    id: 37,
+    name: "Pre-Evolution Faith",
+    requirements: {
+      adjustedWinRate: { max: 44.00 },
+      strength: { min: 54.00, max: 70.00 },
+      share: { min: 0.20 },
+      matchesPercent: { min: 0.05 }
+    },
+    template: "{deck_name} requires Pre-Evolution Faith — {share}% of trainers pilot it despite {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). Like refusing to abandon Magikarp before level 20, true believers know evolution rewards patience despite current struggle."
   },
 
   // TIER 7: EXPERIMENTAL & FRINGE (50-100 decks) - ABUNDANT
   {
-    id: 34,
-    name: "Untested Prospect",
+    id: 38,
+    name: "Professor Elm's Theory",
     requirements: {
-      matchesPercent: { max: 0.50 }
+      matchesPercent: { max: 0.03 }
     },
-    template: "{deck_name} is an Untested Prospect with only {matches} tournament matches ({share}% of meta). At {strength} ({tier}), its {adjusted_win_rate}% record is suggestive but insufficient for definitive assessment. Competitive viability requires further testing and refinement."
+    template: "{deck_name} tests Professor Elm's Theory — only {matches} matches ({share}% meta share) at {strength} ({tier}) with {adjusted_win_rate}% win rate. Like the Johto professor's untested hypotheses on Pokémon eggs, this archetype needs more tournament data before competitive evaluation is possible."
   },
   {
-    id: 35,
-    name: "Fringe Contender",
+    id: 39,
+    name: "Pallet Town Departure",
     requirements: {
-      strength: { min: 65.00, max: 76.00 },
-      adjustedWinRate: { min: 44.00 },
-      share: { min: 0.20, max: 1.80 }
+      matchesPercent: { min: 0.03, max: 0.10 },
+      strength: { max: 65.00 }
     },
-    template: "{deck_name} sits on the Fringe at {strength} ({tier}) — achieving {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Viable and interesting for theorycrafters, but lacks the consistency to breach elite competitive territory."
+    template: "{deck_name} begins its Pallet Town Departure — {matches} matches ({share}% meta share) with {adjusted_win_rate}% win rate at {strength} ({tier}). Like a trainer's first tentative steps on Route 1, this fledgling archetype shows promise but requires experience and refinement to mature."
+  },
+  {
+    id: 40,
+    name: "Crasher Wake's Wave",
+    requirements: {
+      matchesPercent: { min: 0.03, max: 0.15 },
+      adjustedWinRate: { min: 48.00 },
+      strength: { min: 60.00, max: 75.00 }
+    },
+    template: "{deck_name} rides Crasher Wake's Wave — {matches} matches at {share}% meta share with {adjusted_win_rate}% win rate at {strength} ({tier}). Like the Pastoria Gym Leader's unpredictable Surf attacks, this deck crashes into tournaments with surprising results, but sustainability is questionable."
+  },
+  {
+    id: 41,
+    name: "Bug Catcher's Pride",
+    requirements: {
+      matchesPercent: { min: 0.05, max: 0.20 },
+      share: { max: 0.50 },
+      strength: { min: 58.00, max: 72.00 }
+    },
+    template: "{deck_name} represents Bug Catcher's Pride — {matches} matches at {share}% meta share with {adjusted_win_rate}% win rate at {strength} ({tier}). Like Youngster trainers devoted to their Beedrill and Butterfree, this niche specialist deck appeals to pilots who embrace the underdog type."
+  },
+  {
+    id: 42,
+    name: "Cerulean Cave Explorer",
+    requirements: {
+      strength: { min: 60.00, max: 76.00 },
+      adjustedWinRate: { min: 40.00 },
+      share: { min: 0.12, max: 1.80 },
+      matchesPercent: { min: 0.05 }
+    },
+    template: "{deck_name} enters Cerulean Cave — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% meta share. Like venturing into Kanto's most dangerous dungeon seeking Mewtwo, this deck appeals to explorers seeking unconventional paths to victory."
   },
 
   // TIER 8: FALLBACK
   {
-    id: 36,
-    name: "Format Participant",
+    id: 43,
+    name: "Pokédex Entry",
     requirements: {},
-    template: "{deck_name} is represented in the format at {strength} ({tier}) with {share}% metagame share and {adjusted_win_rate}% adjusted win rate across {W}-{L}-{T} ({matches} matches)."
+    template: "{deck_name} earns a Pokédex Entry at {strength} ({tier}) with {share}% meta share and {adjusted_win_rate}% adjusted win rate across {W}-{L}-{T} ({matches} matches). Every deck, like every Pokémon, contributes uniquely to the competitive ecosystem's biodiversity."
   }
 ];
+
 
 // Check if deck meets template requirements
 const meetsRequirements = (deck, requirements, totalGames, deckShare) => {
