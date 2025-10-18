@@ -907,7 +907,7 @@ const TEMPLATES = [
       matchesPercent: { min: 0.12, max: 0.40 },
       strength: { min: 60.00, max: 75.00 }
     },
-    template: "{deck_name} is a Format Mystery — appearing in {matches} matches ({share}% of meta), its {adjusted_win_rate}% performance at {strength} ({tier}) raises intriguing questions about format adaptation, hidden synergies, and metagame evolution."
+    template: "{deck_name} is a Format Mystery — appearing in {matches} matches ({share}% of meta), and only a {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) raises intriguing questions about why so many people chose this deck."
   },
   {
     id: 32,
