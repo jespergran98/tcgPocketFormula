@@ -12,37 +12,56 @@ Unranked = Below 70 (Insufficient/Unqualified)
 
 ---
 
-When applying the templates to 500 decks, only these 12 templates were used:
+When applying the templates to 500 decks, only these templates were used:
 
-Template Distribution
-Standard Report
-459
-Needs More Data
-21
-Cult Favorite
-6
-Dark Horse
+Untested Prospect
+305
+Burst Damage
+87
+Devoted Master
+32
+Sleeping Snorlax
+29
+Specialist's Domain
+8
+Format Mystery
+7
+Tournament Essential
+5
+Ace Trainer
+5
+Breakthrough Evolution
+4
+Swift Strike
+4
+Hidden Gem
 3
-Format Dominator
+Format Participant
 2
-Battle-Tested Champion
+Endurance Runner
 2
-Niche Specialist
-2
-Hidden Elite
+Champion's Throne
 1
-High-Ceiling Mastery
+Legendary Pokémon
 1
-Spoiler Pick
+Metagame Pillar
 1
-Promising Upstart
+Unstoppable Force
 1
-Fringe Contender
+Type Advantage Master
+1
+Emerging Contender
+1
+Curious Anomaly
 1
 
-Update and improve the templates so they have more usage. Some templates should obviously be extremely hard to get, only possible form the very best decks, but I want a larger overall variety.
+Remove and improve the templates to create greater variety and balance. Some templates should remain extremely hard to obtain, reserved for only the very best decks, but the overall distribution should be more diverse.
 
-The top templates should still be extremely hard to get, but improve the other templates, especially those that didn't appear a single time.
+Templates with lower IDs are prioritized, keep this priority in mind when improving or reorganizing the list, and adjust the order if needed to better reflect rarity and difficulty.
+
+The top-tier templates must stay very rare, but revise and strengthen the others—especially those that didn’t appear at all—to make them more meaningful and achievable.
+
+Improve the naming and deck requirements as needed to make each template more distinct and unique in a pokémon TCG pocket theme.
 
 ---
 

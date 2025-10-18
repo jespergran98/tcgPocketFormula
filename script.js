@@ -585,354 +585,360 @@ const getTier = (strength) => {
   return 'Unranked';
 };
 
-// Template definitions
 const TEMPLATES = [
+  // TIER 1: ELITE/LEGENDARY (1-2 decks) - EXTREMELY RARE
   {
     id: 1,
-    name: "Format Tyrant",
-    description: "Dominates the meta with overwhelming presence and elite performance",
+    name: "Champion's Throne",
     requirements: {
       share: { min: 15.00 },
       adjustedWinRate: { min: 53.00 },
-      strength: { min: 92.00 },
-      metaImpact: { min: 800.00 }
+      strength: { min: 92.00 }
     },
-    template: "{deck_name} is the format tyrant, commanding {share}% of the entire meta with {adjusted_win_rate}% adjusted win rate. At {strength} ({tier}) with {meta_impact} meta impact, it defines the competitive landscape."
+    template: "{deck_name} sits atop the Champion's Throne — dominating {share}% of tournaments with an exceptional {adjusted_win_rate}% adjusted win rate. At {strength} ({tier}), this deck commands the format with the authority of a true Champion, defining the very rules opponents must follow."
   },
   {
     id: 2,
-    name: "Format Dominator",
-    description: "Massive meta share with consistently strong performance",
+    name: "Legendary Pokémon",
     requirements: {
-      share: { min: 12.00 },
+      strength: { min: 88.00 },
       adjustedWinRate: { min: 52.00 },
-      strength: { min: 90.00 }
+      share: { min: 4.00 },
+      matchesPercent: { min: 1.50 }
     },
-    template: "{deck_name} dominates the format at {share}% of the meta with a reliable {adjusted_win_rate}% adjusted win rate. Rating: {strength} ({tier})."
+    template: "{deck_name} is Legendary — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. At {share}% of the format, it represents the complete package: powerful, versatile, and consistently proven across the competitive landscape."
   },
+
+  // TIER 2: ELITE PERFORMERS (5-8 decks) - VERY RARE
   {
     id: 3,
-    name: "Apex Predator",
-    description: "Elite strength with significant presence and proven results",
+    name: "Unstoppable Force",
     requirements: {
-      strength: { min: 91.00 },
-      adjustedWinRate: { min: 54.00 },
-      share: { min: 6.00 },
-      matchesPercent: { min: 3.00 }
+      adjustedWinRate: { min: 57.00 },
+      strength: { min: 84.00 }
     },
-    template: "{deck_name} is the apex predator: {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. At {share}% of the format, it's the complete package."
+    template: "{deck_name} is an Unstoppable Force — an extraordinary {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches. At {strength} ({tier}) with {share}% of the meta, this archetype's dominance is undeniable and backed by substantial tournament data."
   },
   {
     id: 4,
-    name: "Hidden Elite",
-    description: "Minimal adoption but exceptional performance with sufficient data",
+    name: "Format Pillar",
     requirements: {
-      share: { max: 2.00 },
-      strength: { min: 90.00 },
-      matchesPercent: { min: 0.30 }
+      share: { min: 5.00 },
+      strength: { min: 83.00 },
+      adjustedWinRate: { min: 50.00 }
     },
-    template: "Despite minimal adoption ({share}% of the meta), {deck_name} stands as hidden elite at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches."
+    template: "{deck_name} stands as the Format Pillar — representing {share}% of competitive play at {strength} ({tier}). With {adjusted_win_rate}% adjusted win rate across {matches} matches, this anchor defines the metagame. Every serious trainer builds their strategy around or against it."
   },
   {
     id: 5,
-    name: "Surgical Precision",
-    description: "Exceptional win rate in moderate presence with strong results",
+    name: "Breakthrough Evolution",
     requirements: {
-      adjustedWinRate: { min: 57.00 },
-      share: { min: 1.50, max: 5.00 },
-      strength: { min: 87.00 },
-      matchesPercent: { min: 0.80 }
+      strength: { min: 81.00, max: 87.00 },
+      adjustedWinRate: { min: 50.50, max: 56.99 },
+      share: { min: 1.50, max: 5.00 }
     },
-    template: "{deck_name} delivers surgical precision: {adjusted_win_rate}% adjusted win rate at {share}% of the format equals {strength} ({tier}). {matches} matches prove its lethal consistency."
+    template: "{deck_name} has undergone a Breakthrough Evolution — emerging with {strength} ({tier}) performance and {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. The competitive community is taking notice of this archetype's explosive potential."
   },
+
+  // TIER 3: STRONG PERFORMERS (8-12 decks) - RARE
   {
     id: 6,
-    name: "Meta Pillar",
-    description: "Large meta share with solid, consistent performance",
+    name: "Hidden Gem",
     requirements: {
-      share: { min: 8.00 },
-      strength: { min: 84.00, max: 90.99 },
-      matchesPercent: { min: 2.50 }
+      share: { max: 2.50 },
+      strength: { min: 86.00 },
+      adjustedWinRate: { min: 52.00 }
     },
-    template: "{deck_name} is a meta pillar — representing {share}% of the format at {strength} ({tier}). Its {adjusted_win_rate}% adjusted win rate across {matches} matches proves why it's a format staple."
+    template: "{deck_name} is a Hidden Gem — overlooked at just {share}% adoption, yet it delivers {strength} ({tier}) performance with {adjusted_win_rate}% adjusted win rate across {matches} matches. Those who've discovered it possess a secret weapon that few opponents see coming."
   },
   {
     id: 7,
-    name: "Niche Specialist",
-    description: "High win rate in small, dedicated player base",
+    name: "Rising Star",
     requirements: {
-      adjustedWinRate: { min: 55.00 },
-      share: { max: 1.50 },
-      strength: { min: 83.00 },
-      matchesPercent: { min: 0.25, max: 0.60 }
+      share: { min: 2.50, max: 6.00 },
+      strength: { min: 80.00, max: 86.00 },
+      adjustedWinRate: { min: 50.00 }
     },
-    template: "{deck_name} is a true niche specialist with {adjusted_win_rate}% adjusted win rate across {matches} matches ({W}-{L}-{T}). At {strength} ({tier}) and {share}% of the meta — rare but potent."
+    template: "{deck_name} is a Rising Star — {share}% of trainers have adopted it with {strength} ({tier}) results and {adjusted_win_rate}% adjusted win rate across {matches} matches. Tournament success is building momentum for what could become the next dominant force."
   },
   {
     id: 8,
-    name: "Elite Experimentalist",
-    description: "Exceptional performance with limited but meaningful adoption",
+    name: "Type Advantage Master",
     requirements: {
-      strength: { min: 87.00 },
-      adjustedWinRate: { min: 55.00 },
-      matchesPercent: { min: 0.50, max: 1.50 },
+      adjustedWinRate: { min: 54.00, max: 67.00 },
+      strength: { min: 79.00, max: 85.00 },
       share: { max: 2.00 }
     },
-    template: "{deck_name} is an elite experimentalist: {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. Only {share}% of the format, yet it excels."
+    template: "{deck_name} is a Type Advantage Master — posting {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). At only {share}% of the meta, this deck's surgical precision against key matchups makes it devastatingly effective in skilled hands."
   },
   {
     id: 9,
-    name: "High-Ceiling Mastery",
-    description: "Rewards skilled piloting with strong tournament endurance",
+    name: "Tournament Essential",
     requirements: {
-      strength: { min: 85.00 },
-      adjustedWinRate: { min: 53.00 },
-      share: { max: 3.00 },
-      matchesPercent: { min: 0.60 },
-      avgMatchesPerEntry: { min: 5.50 }
+      strength: { min: 78.00, max: 85.00 },
+      share: { min: 1.00, max: 3.50 },
+      adjustedWinRate: { min: 49.50 }
     },
-    template: "{deck_name} rewards mastery: {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta. {avg_matches_per_entry} average matches per entry proves tournament endurance."
+    template: "{deck_name} is Tournament Essential at {strength} ({tier}) — consistently appearing in competitive play with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Reliable performance and proven consistency make it invaluable to serious trainers."
   },
+
+  // TIER 4: HIGH PERFORMERS (10-20 decks) - UNCOMMON
   {
     id: 10,
-    name: "Meta Shaper",
-    description: "Significant influence on the format with solid performance",
+    name: "Specialist's Domain",
     requirements: {
-      metaImpact: { min: 350.00 },
-      share: { min: 4.00, max: 11.99 },
-      strength: { min: 82.00 },
-      adjustedWinRate: { min: 50.00 }
+      share: { min: 0.40, max: 2.00 },
+      strength: { min: 72.00, max: 82.00 },
+      adjustedWinRate: { min: 49.00 }
     },
-    template: "{deck_name} shapes the metagame — commanding {share}% of the format with {adjusted_win_rate}% adjusted win rate, producing {meta_impact} meta impact at {strength} ({tier})."
+    template: "{deck_name} is a Specialist's Domain — {share}% of trainers have mastered it at {strength} ({tier}). With {adjusted_win_rate}% adjusted win rate across {matches} matches, it proves that deep preparation and focused expertise yield consistent competitive excellence."
   },
   {
     id: 11,
-    name: "Breakout Elite",
-    description: "Emerging deck with elite performance demanding attention",
+    name: "Burst Damage",
     requirements: {
-      strength: { min: 90.00 },
-      adjustedWinRate: { min: 54.00 },
-      matchesPercent: { min: 1.50 },
-      share: { min: 2.00, max: 7.99 }
+      adjustedWinRate: { min: 55.00 },
+      share: { max: 1.50 }
     },
-    template: "{deck_name} is breaking out: {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format — elite performance demanding attention."
+    template: "{deck_name} delivers Burst Damage — striking with lethal {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {share}% of the meta. Rating: {strength} ({tier}). Explosive power with limited consistency creates high-variance potential for those seeking big upside."
   },
   {
     id: 12,
-    name: "Battle-Tested Champion",
-    description: "Proven through extensive tournament play with strong results",
+    name: "Ace Trainer",
     requirements: {
-      matchesPercent: { min: 3.50 },
-      strength: { min: 84.00 },
-      adjustedWinRate: { min: 50.00 }
+      share: { max: 1.30 },
+      avgMatchesPerEntry: { min: 3.00 },
+      strength: { min: 70.00, max: 82.00 }
     },
-    template: "{deck_name} is battle-tested: {W}-{L}-{T} across {matches} matches with {adjusted_win_rate}% adjusted win rate and {strength} ({tier}). Proven across {share}% of the format."
+    template: "{deck_name} belongs to Ace Trainers — a dedicated community pilots it at {share}% of the format, averaging {avg_matches_per_entry} matches per trainer. At {strength} ({tier}), their {adjusted_win_rate}% adjusted win rate across {matches} matches rewards expertise and unwavering commitment."
   },
   {
     id: 13,
-    name: "Format Cornerstone",
-    description: "Foundational deck with strong presence and performance",
+    name: "Sleeping Snorlax",
     requirements: {
-      strength: { min: 88.00, max: 91.99 },
-      share: { min: 5.00, max: 11.99 },
-      matchesPercent: { min: 2.00 }
+      share: { max: 0.50 },
+      adjustedWinRate: { min: 51.00 }
     },
-    template: "{deck_name} is a format cornerstone at {strength} ({tier}) — commanding {share}% of the meta with {adjusted_win_rate}% adjusted win rate across {matches} matches."
+    template: "{deck_name} rests as a Sleeping Snorlax at merely {share}% of the meta — a dormant powerhouse waiting to be awakened. Its {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches hints at {strength} ({tier}) potential. The few who've discovered it know its true competitive worth."
   },
   {
     id: 14,
-    name: "Sleeping Giant",
-    description: "Underplayed deck with elite potential waiting to be unleashed",
+    name: "Perfect Catch",
     requirements: {
-      strength: { min: 86.00 },
-      share: { min: 1.50, max: 4.00 },
-      adjustedWinRate: { min: 51.50 },
-      matchesPercent: { min: 1.00 }
+      adjustedWinRate: { min: 68.00 },
+      share: { max: 1 }
     },
-    template: "{deck_name} is the sleeping giant — only {share}% of the meta, yet posting {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches."
+    template: "{deck_name} achieved a Perfect Catch: {W}-{L}-{T} for {adjusted_win_rate}% win rate across {matches} matches ({share}% of meta). At {strength} ({tier}), this exceptional performance shows genuine potential—but tournament viability at larger scale remains an open question."
   },
   {
     id: 15,
-    name: "Master's Weapon",
-    description: "High-skill deck with excellent results in dedicated hands",
+    name: "Devoted Master",
     requirements: {
-      adjustedWinRate: { min: 54.00 },
-      share: { min: 0.80, max: 2.50 },
-      matchesPercent: { min: 0.80, max: 2.00 },
-      strength: { min: 82.00 }
+      share: { max: 0.60 },
+      avgMatchesPerEntry: { min: 3.00 },
+      strength: { min: 66.00 }
     },
-    template: "{deck_name} is the master's weapon: {adjusted_win_rate}% adjusted win rate across {matches} matches ({W}-{L}-{T}) at {share}% of the format. Results speak volumes at {strength} ({tier})."
+    template: "{deck_name} reflects one trainer's unwavering devotion — existing at only {share}% of the meta yet accumulating {matches} total matches means {avg_matches_per_entry} average matches per entry. Results: {adjusted_win_rate}% win rate at {strength} ({tier}). Such dedication speaks louder than mass popularity."
   },
   {
     id: 16,
-    name: "Meta Counter",
-    description: "Positioned to exploit popular strategies in the format",
+    name: "Endurance Runner",
     requirements: {
-      strength: { min: 83.00, max: 88.99 },
-      adjustedWinRate: { min: 51.50 },
-      share: { min: 1.00, max: 3.50 },
-      metaImpact: { min: 150.00, max: 349.99 }
+      avgMatchesPerEntry: { min: 3.80 },
+      strength: { min: 76.00, max: 84.00 },
+      share: { max: 2.50 },
+      adjustedWinRate: { min: 49.00 }
     },
-    template: "{deck_name} counters the meta — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate at {share}% of the format. Built to exploit popular strategies."
+    template: "{deck_name} is built for Endurance — rewarding trainers with stamina and preparation. With {avg_matches_per_entry} average matches per pilot across {matches} total matches at {share}% of the meta, it achieves {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) through consistency and tournament durability."
   },
   {
     id: 17,
-    name: "Tournament Grinder",
-    description: "Consistent performer through extensive tournament play",
+    name: "Tactical Counter",
     requirements: {
-      matchesPercent: { min: 3.50 },
-      strength: { min: 81.00, max: 87.99 },
-      adjustedWinRate: { min: 49.50 },
-      share: { min: 3.00 }
+      share: { min: 0.35, max: 2.00 },
+      adjustedWinRate: { min: 49.00 },
+      strength: { min: 72.00, max: 81.00 }
     },
-    template: "{deck_name} is the grinder's choice — {matches} matches across {share}% of the format with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Built for consistency."
+    template: "{deck_name} is a Tactical Counter — only {share}% of trainers employ it, but {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches makes it a devastating pocket pick. Built to exploit critical vulnerabilities in the current metagame."
   },
+
+  // TIER 5: SOLID MID-TIER (20-35 decks) - COMMON
   {
     id: 18,
-    name: "Rising Force",
-    description: "Building momentum with strong performance and growing adoption",
+    name: "Grinder's Testament",
     requirements: {
-      share: { min: 4.00, max: 8.99 },
-      strength: { min: 84.00, max: 89.99 },
-      adjustedWinRate: { min: 50.50 },
-      matchesPercent: { min: 1.50 }
+      strength: { min: 71.00, max: 81.00 },
+      adjustedWinRate: { min: 48.50 },
+      share: { min: 0.70, max: 3.50 }
     },
-    template: "{deck_name} is a rising force — {share}% of the format with {strength} ({tier}) and {adjusted_win_rate}% adjusted win rate across {matches} matches. Momentum building."
+    template: "{deck_name} is the Grinder's Testament — {matches} matches at {share}% of the format demonstrate reliable {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Built for the long tournament season, this archetype rewards consistency, preparation, and the relentless hustle of dedicated trainers."
   },
   {
     id: 19,
-    name: "Cult Favorite",
-    description: "Dedicated player base achieving solid results with passion",
+    name: "Steadfast Guardian",
     requirements: {
-      share: { min: 0.70, max: 2.00 },
-      matchesPercent: { min: 1.00 },
-      strength: { min: 80.00, max: 85.99 },
-      avgMatchesPerEntry: { min: 5.50 }
+      strength: { min: 72.00, max: 79.00 },
+      adjustedWinRate: { min: 48.50 },
+      share: { min: 0.40, max: 1.50 }
     },
-    template: "{deck_name} is a cult favorite — dedicated pilots keep it at {share}% of the format with {strength} ({tier}). {adjusted_win_rate}% adjusted win rate across {matches} matches rewards loyalty."
+    template: "{deck_name} is a Steadfast Guardian at {strength} ({tier}) — delivering {adjusted_win_rate}% adjusted win rate across {matches} matches at just {share}% of the format. Reliable and unpretentious, it proves consistently effective regardless of metagame shifts."
   },
   {
     id: 20,
-    name: "Format Police",
-    description: "Keeps dominant strategies in check with targeted performance",
+    name: "Awakening Titan",
     requirements: {
-      strength: { min: 82.00, max: 87.99 },
-      adjustedWinRate: { min: 50.00 },
-      share: { min: 1.50, max: 4.00 },
-      metaImpact: { min: 120.00 }
+      strength: { min: 77.00, max: 84.00 },
+      share: { min: 0.50, max: 2.20 },
+      adjustedWinRate: { min: 49.00 }
     },
-    template: "{deck_name} polices the format — {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate at {share}% of the meta. A check that keeps strategies honest."
+    template: "{deck_name} stirs as an Awakening Titan — only {share}% of trainers have recognized its potential, yet it achieves {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. When this archetype fully awakens, the entire competitive landscape will tremble."
   },
   {
     id: 21,
-    name: "Dark Horse",
-    description: "Quietly proving itself with solid results under the radar",
+    name: "Volume Leader",
     requirements: {
-      strength: { min: 84.00, max: 88.99 },
-      share: { min: 2.00, max: 5.00 },
-      adjustedWinRate: { min: 50.00 },
-      matchesPercent: { min: 1.20 }
+      strength: { min: 68.00, max: 78.00 },
+      share: { min: 0.50, max: 2.00 },
+      adjustedWinRate: { min: 47.50 }
     },
-    template: "{deck_name} is the dark horse — {share}% of the format with {strength} ({tier}) and {adjusted_win_rate}% adjusted win rate. Quietly proving itself across {matches} matches."
+    template: "{deck_name} leads through Volume — accumulating {matches} matches at {share}% of the meta demonstrates {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). Pilot dedication and consistent tournament attendance keep this archetype alive and relevant in the metagame."
   },
   {
     id: 22,
-    name: "Spoiler Pick",
-    description: "Small presence but dangerous enough to upset expectations",
+    name: "Reliable Partner",
     requirements: {
-      share: { min: 0.70, max: 3.00 },
-      adjustedWinRate: { min: 51.00 },
-      strength: { min: 80.00, max: 85.99 },
-      matchesPercent: { min: 0.80 }
+      strength: { min: 80.00, max: 90.00 },
+      share: { min: 2.00, max: 6.00 },
+      adjustedWinRate: { min: 50.00, max: 53.00 }
     },
-    template: "{deck_name} is the spoiler pick — only {share}% of the format, but {adjusted_win_rate}% adjusted win rate makes it dangerous at {strength} ({tier}). Built to upset expectations."
+    template: "{deck_name} is the Reliable Partner — {share}% of trainers trust it with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) across {matches} matches. Steady results and stable metagame presence prove its worth as a foundational format strategy."
   },
   {
     id: 23,
-    name: "Solid Performer",
-    description: "Reliable and consistent with proven tournament results",
+    name: "Perfect Equilibrium",
     requirements: {
-      strength: { min: 81.00, max: 84.99 },
-      adjustedWinRate: { min: 49.50, max: 51.99 },
-      matchesPercent: { min: 1.80, max: 4.00 },
-      share: { min: 1.50 }
+      adjustedWinRate: { min: 48.50, max: 51.50 },
+      strength: { min: 67.00, max: 77.00 },
+      share: { min: 0.60, max: 3.00 }
     },
-    template: "{deck_name} is a solid performer: {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Reliable and consistent."
+    template: "{deck_name} embodies Perfect Equilibrium at exactly {adjusted_win_rate}% adjusted win rate ({W}-{L}-{T}) across {matches} matches. At {strength} ({tier}) and {share}% of the meta, it represents format balance — neither over nor undervalued, simply fair and honest."
   },
   {
     id: 24,
-    name: "Overplayed Underperformer",
-    description: "High popularity but results don't match the hype",
+    name: "Emerging Contender",
     requirements: {
-      share: { min: 6.00 },
-      strength: { max: 83.99 },
-      adjustedWinRate: { max: 50.00 }
+      strength: { min: 68.00, max: 78.00 },
+      adjustedWinRate: { min: 47.00 },
+      share: { min: 0.40, max: 2.00 }
     },
-    template: "{deck_name} represents {share}% of the format but underdelivers at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate. Popularity exceeds performance."
+    template: "{deck_name} is an Emerging Contender at {strength} ({tier}) — posting {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta. Early tournament success signals genuine potential; continued performance will reveal if this is a temporary spike or sustainable breakthrough."
   },
   {
     id: 25,
-    name: "Polarized Specialist",
-    description: "Matchup-dependent deck with feast-or-famine results",
+    name: "Master's Tool",
     requirements: {
-      adjustedWinRate: { min: 50.00, max: 53.00 },
-      strength: { min: 79.00, max: 84.99 },
-      matchesPercent: { min: 1.00, max: 3.00 },
-      share: { min: 1.00, max: 3.50 }
+      strength: { min: 70.00, max: 81.00 },
+      avgMatchesPerEntry: { min: 3.00 },
+      share: { max: 2.00 }
     },
-    template: "{deck_name} is highly polarized — {adjusted_win_rate}% adjusted win rate at {strength} ({tier}) suggests feast-or-famine matchups. {share}% of the format across {matches} matches."
+    template: "{deck_name} is a Master's Tool — it rewards deep knowledge and practice with {strength} ({tier}) performance. Achieving {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta, pilots average {avg_matches_per_entry} matches per entry, proving extended tournament runs by true experts."
   },
+
+  // TIER 6: INTERESTING FRINGE (30-50 decks) - UNCOMMON
   {
     id: 26,
-    name: "Promising Upstart",
-    description: "Early results suggest potential but needs more data",
+    name: "Curious Anomaly",
     requirements: {
-      strength: { min: 82.00, max: 87.99 },
-      matchesPercent: { min: 0.35, max: 1.00 },
-      adjustedWinRate: { min: 51.00 }
+      share: { min: 0.20, max: 1.50 },
+      strength: { min: 64.00, max: 82.00 }
     },
-    template: "{deck_name} shows promise at {strength} ({tier}) with {adjusted_win_rate}% adjusted win rate, but sample is limited ({matches} matches at {share}% of the meta). Potential evident."
+    template: "{deck_name} is a Curious Anomaly — {share}% of the meta with {matches} matches producing {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). This data pattern defies conventional wisdom, suggesting either hidden potential or unusual sample dynamics worth investigating."
   },
   {
     id: 27,
-    name: "Fringe Contender",
-    description: "Viable option sitting just outside elite tier",
+    name: "Metagame Shifter",
     requirements: {
-      strength: { min: 77.00, max: 81.99 },
-      matchesPercent: { min: 1.00, max: 3.00 },
-      adjustedWinRate: { min: 48.00 },
-      share: { min: 0.80 }
+      metaImpact: { min: 180.00 },
+      strength: { min: 70.00 }
     },
-    template: "{deck_name} sits on the fringe at {strength} ({tier}) — {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Viable but not elite."
+    template: "{deck_name} is a Metagame Shifter — generating {meta_impact} meta impact despite {share}% adoption. At {strength} ({tier}) with {adjusted_win_rate}% win rate across {matches} matches, it disproportionately influences how opponents prepare and deckbuild for competition."
   },
   {
     id: 28,
-    name: "High-Volume Inconsistent",
-    description: "Popular but struggles to deliver consistent results",
+    name: "Swift Strike",
     requirements: {
-      strength: { min: 76.00, max: 82.99 },
-      matchesPercent: { min: 2.50 },
-      adjustedWinRate: { max: 50.49 },
-      share: { min: 2.00 }
+      avgMatchesPerEntry: { max: 2.50 },
+      strength: { max: 73.00 },
+      share: { min: 0.20 }
     },
-    template: "{deck_name} sees heavy play but lacks consistency: {W}-{L}-{T} ({matches} matches) with {adjusted_win_rate}% adjusted win rate at {strength} ({tier}). {share}% of the format with mixed results."
+    template: "{deck_name} is a Swift Strike — pilots average only {avg_matches_per_entry} matches per entry, suggesting quick tournament eliminations. {matches} total matches with {adjusted_win_rate}% win rate at {strength} ({tier}). High early impact, brief duration—built for aggressive strategies."
   },
   {
     id: 29,
-    name: "Needs More Data",
-    description: "Insufficient results to draw strong conclusions",
+    name: "Explorer's Path",
     requirements: {
-      matchesPercent: { max: 0.70 },
-      strength: { min: 75.00, max: 83.99 }
+      matchesPercent: { min: 0.15, max: 0.50 },
+      adjustedWinRate: { min: 46.50 },
+      share: { max: 1.00 },
+      strength: { min: 65.00, max: 78.00 }
     },
-    template: "{deck_name} has limited data ({matches} matches, {share}% of meta). Currently rated {strength} ({tier}), but more tournament results needed to confirm strength."
+    template: "{deck_name} follows the Explorer's Path — piloted by adventurous trainers, it accumulates {matches} matches at {share}% adoption. Results of {adjusted_win_rate}% at {strength} ({tier}) suggest potential worth investigating as the format continues to evolve."
   },
   {
     id: 30,
-    name: "Standard Report",
-    description: "Default statistical summary",
+    name: "Format Mystery",
+    requirements: {
+      matchesPercent: { min: 0.12, max: 0.40 },
+      strength: { min: 60.00, max: 75.00 }
+    },
+    template: "{deck_name} is a Format Mystery — appearing in {matches} matches ({share}% of meta), its {adjusted_win_rate}% performance at {strength} ({tier}) raises intriguing questions about format adaptation, hidden synergies, and metagame evolution."
+  },
+  {
+    id: 31,
+    name: "Work in Progress",
+    requirements: {
+      matchesPercent: { min: 0.12, max: 0.45 },
+      strength: { min: 62.00, max: 76.00 }
+    },
+    template: "{deck_name} is a Work in Progress — {matches} tournament matches at {share}% of the meta show early results. At {strength} ({tier}) with {adjusted_win_rate}% win rate, this emerging archetype is being actively tested, refined, and developed by the innovative community."
+  },
+  {
+    id: 32,
+    name: "Believer's Choice",
+    requirements: {
+      adjustedWinRate: { max: 45.00 },
+      strength: { min: 58.00, max: 70.00 },
+      share: { min: 0.30 }
+    },
+    template: "{deck_name} is backed by devoted Believers — {share}% of trainers continue piloting it despite {adjusted_win_rate}% win rate ({W}-{L}-{T}) across {matches} matches at {strength} ({tier}). Passion and unwavering loyalty to potential transcend statistical performance."
+  },
+
+  // TIER 7: EXPERIMENTAL & FRINGE (50-100 decks) - ABUNDANT
+  {
+    id: 33,
+    name: "Untested Prospect",
+    requirements: {
+      matchesPercent: { max: 0.50 }
+    },
+    template: "{deck_name} is an Untested Prospect with only {matches} tournament matches ({share}% of meta). At {strength} ({tier}), its {adjusted_win_rate}% record is suggestive but insufficient for definitive assessment. Competitive viability requires further testing and refinement."
+  },
+  {
+    id: 34,
+    name: "Fringe Contender",
+    requirements: {
+      strength: { min: 65.00, max: 76.00 },
+      adjustedWinRate: { min: 44.00 },
+      share: { min: 0.20, max: 1.80 }
+    },
+    template: "{deck_name} sits on the Fringe at {strength} ({tier}) — achieving {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Viable and interesting for theorycrafters, but lacks the consistency to breach elite competitive territory."
+  },
+
+  // TIER 8: FALLBACK
+  {
+    id: 35,
+    name: "Format Participant",
     requirements: {},
-    template: "{deck_name} sits at {strength} ({tier}) representing {share}% of the format with {adjusted_win_rate}% adjusted win rate across {W}-{L}-{T} ({matches} matches)."
+    template: "{deck_name} is represented in the format at {strength} ({tier}) with {share}% metagame share and {adjusted_win_rate}% adjusted win rate across {W}-{L}-{T} ({matches} matches)."
   }
 ];
 
