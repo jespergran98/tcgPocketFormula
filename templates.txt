@@ -1,0 +1,388 @@
+# 30 Refined Deck Templates - Optimal Priority Order
+
+## Template 1: Format Tyrant
+**Requirements:**
+- Share >= 15.00%
+- Adjusted Win Rate >= 53.00%
+- Rating >= 92.00
+- Meta Impact >= 800.00
+
+**Template:**
+"{deck_name} is the format tyrant, commanding {share}% of the entire meta with {adjusted_win_rate}% adjusted win rate. At {rating} ({tier}) with {meta_impact} meta impact, it defines the competitive landscape."
+
+---
+
+## Template 2: Format Dominator
+**Requirements:**
+- Share >= 12.00%
+- Adjusted Win Rate >= 52.00%
+- Rating >= 90.00
+
+**Template:**
+"{deck_name} dominates the format at {share}% of the meta with a reliable {adjusted_win_rate}% adjusted win rate. Rating: {rating} ({tier})."
+
+---
+
+## Template 3: Apex Predator
+**Requirements:**
+- Rating >= 91.00
+- Adjusted Win Rate >= 54.00%
+- Share >= 6.00%
+- Matches >= 3.00% of total_matches
+
+**Template:**
+"{deck_name} is the apex predator: {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. At {share}% of the format, it's the complete package."
+
+---
+
+## Template 4: Hidden Elite
+**Requirements:**
+- Share <= 2.00%
+- Rating >= 90.00
+- Matches >= 0.30% of total_matches
+
+**Template:**
+"Despite minimal adoption ({share}% of the meta), {deck_name} stands as hidden elite at {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches."
+
+---
+
+## Template 5: Surgical Precision
+**Requirements:**
+- Adjusted Win Rate >= 57.00%
+- Share >= 1.50%
+- Share <= 5.00%
+- Rating >= 87.00
+- Matches >= 0.80% of total_matches
+
+**Template:**
+"{deck_name} delivers surgical precision: {adjusted_win_rate}% adjusted win rate at {share}% of the format equals {rating} ({tier}). {matches} matches prove its lethal consistency."
+
+---
+
+## Template 6: Meta Pillar
+**Requirements:**
+- Share >= 8.00%
+- Rating >= 84.00
+- Rating < 91.00
+- Matches >= 2.50% of total_matches
+
+**Template:**
+"{deck_name} is a meta pillar — representing {share}% of the format at {rating} ({tier}). Its {adjusted_win_rate}% adjusted win rate across {matches} matches proves why it's a format staple."
+
+---
+
+## Template 7: Niche Specialist
+**Requirements:**
+- Adjusted Win Rate >= 55.00%
+- Share <= 1.50%
+- Rating >= 83.00
+- Matches <= 0.60% of total_matches
+- Matches >= 0.25% of total_matches
+
+**Template:**
+"{deck_name} is a true niche specialist with {adjusted_win_rate}% adjusted win rate across {matches} matches ({W}-{L}-{T}). At {rating} ({tier}) and {share}% of the meta — rare but potent."
+
+---
+
+## Template 8: Elite Experimentalist
+**Requirements:**
+- Rating >= 87.00
+- Adjusted Win Rate >= 55.00%
+- Matches >= 0.50% of total_matches
+- Matches <= 1.50% of total_matches
+- Share <= 2.00%
+
+**Template:**
+"{deck_name} is an elite experimentalist: {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches. Only {share}% of the format, yet it excels."
+
+---
+
+## Template 9: High-Ceiling Mastery
+**Requirements:**
+- Rating >= 85.00
+- Adjusted Win Rate >= 53.00%
+- Share <= 3.00%
+- Matches >= 0.60% of total_matches
+- Average Matches per Entry >= 5.50
+
+**Template:**
+"{deck_name} rewards mastery: {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the meta. {avg_matches_per_entry} average matches per entry proves tournament endurance."
+
+---
+
+## Template 10: Meta Shaper
+**Requirements:**
+- Meta Impact >= 350.00
+- Share >= 4.00%
+- Share < 12.00%
+- Rating >= 82.00
+- Adjusted Win Rate >= 50.00%
+
+**Template:**
+"{deck_name} shapes the metagame — commanding {share}% of the format with {adjusted_win_rate}% adjusted win rate, producing {meta_impact} meta impact at {rating} ({tier})."
+
+---
+
+## Template 11: Breakout Elite
+**Requirements:**
+- Rating >= 90.00
+- Adjusted Win Rate >= 54.00%
+- Matches >= 1.50% of total_matches
+- Share >= 2.00%
+- Share < 8.00%
+
+**Template:**
+"{deck_name} is breaking out: {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format — elite performance demanding attention."
+
+---
+
+## Template 12: Battle-Tested Champion
+**Requirements:**
+- Matches >= 3.50% of total_matches
+- Rating >= 84.00
+- Adjusted Win Rate >= 50.00%
+
+**Template:**
+"{deck_name} is battle-tested: {W}-{L}-{T} across {matches} matches with {adjusted_win_rate}% adjusted win rate and {rating} ({tier}). Proven across {share}% of the format."
+
+---
+
+## Template 13: Format Cornerstone
+**Requirements:**
+- Rating >= 88.00
+- Rating < 92.00
+- Share >= 5.00%
+- Share < 12.00%
+- Matches >= 2.00% of total_matches
+
+**Template:**
+"{deck_name} is a format cornerstone at {rating} ({tier}) — commanding {share}% of the meta with {adjusted_win_rate}% adjusted win rate across {matches} matches."
+
+---
+
+## Template 14: Sleeping Giant
+**Requirements:**
+- Rating >= 86.00
+- Share <= 4.00%
+- Share >= 1.50%
+- Adjusted Win Rate >= 51.50%
+- Matches >= 1.00% of total_matches
+
+**Template:**
+"{deck_name} is the sleeping giant — only {share}% of the meta, yet posting {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches."
+
+---
+
+## Template 15: Master's Weapon
+**Requirements:**
+- Adjusted Win Rate >= 54.00%
+- Share <= 2.50%
+- Share >= 0.80%
+- Matches >= 0.80% of total_matches
+- Matches <= 2.00% of total_matches
+- Rating >= 82.00
+
+**Template:**
+"{deck_name} is the master's weapon: {adjusted_win_rate}% adjusted win rate across {matches} matches ({W}-{L}-{T}) at {share}% of the format. Results speak volumes at {rating} ({tier})."
+
+---
+
+## Template 16: Meta Counter
+**Requirements:**
+- Rating >= 83.00
+- Rating < 89.00
+- Adjusted Win Rate >= 51.50%
+- Share >= 1.00%
+- Share <= 3.50%
+- Meta Impact >= 150.00
+- Meta Impact < 350.00
+
+**Template:**
+"{deck_name} counters the meta — {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate at {share}% of the format. Built to exploit popular strategies."
+
+---
+
+## Template 17: Tournament Grinder
+**Requirements:**
+- Matches >= 3.50% of total_matches
+- Rating >= 81.00
+- Rating < 88.00
+- Adjusted Win Rate >= 49.50%
+- Share >= 3.00%
+
+**Template:**
+"{deck_name} is the grinder's choice — {matches} matches across {share}% of the format with {adjusted_win_rate}% adjusted win rate at {rating} ({tier}). Built for consistency."
+
+---
+
+## Template 18: Rising Force
+**Requirements:**
+- Share >= 4.00%
+- Share < 9.00%
+- Rating >= 84.00
+- Rating < 90.00
+- Adjusted Win Rate >= 50.50%
+- Matches >= 1.50% of total_matches
+
+**Template:**
+"{deck_name} is a rising force — {share}% of the format with {rating} ({tier}) and {adjusted_win_rate}% adjusted win rate across {matches} matches. Momentum building."
+
+---
+
+## Template 19: Cult Favorite
+**Requirements:**
+- Share <= 2.00%
+- Share >= 0.70%
+- Matches >= 1.00% of total_matches
+- Rating >= 80.00
+- Rating < 86.00
+- Average Matches per Entry >= 5.50
+
+**Template:**
+"{deck_name} is a cult favorite — dedicated pilots keep it at {share}% of the format with {rating} ({tier}). {adjusted_win_rate}% adjusted win rate across {matches} matches rewards loyalty."
+
+---
+
+## Template 20: Format Police
+**Requirements:**
+- Rating >= 82.00
+- Rating < 88.00
+- Adjusted Win Rate >= 50.00%
+- Share >= 1.50%
+- Share <= 4.00%
+- Meta Impact >= 120.00
+
+**Template:**
+"{deck_name} polices the format — {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate at {share}% of the meta. A check that keeps strategies honest."
+
+---
+
+## Template 21: Dark Horse
+**Requirements:**
+- Rating >= 84.00
+- Rating < 89.00
+- Share >= 2.00%
+- Share <= 5.00%
+- Adjusted Win Rate >= 50.00%
+- Matches >= 1.20% of total_matches
+
+**Template:**
+"{deck_name} is the dark horse — {share}% of the format with {rating} ({tier}) and {adjusted_win_rate}% adjusted win rate. Quietly proving itself across {matches} matches."
+
+---
+
+## Template 22: Spoiler Pick
+**Requirements:**
+- Share <= 3.00%
+- Share >= 0.70%
+- Adjusted Win Rate >= 51.00%
+- Rating >= 80.00
+- Rating < 86.00
+- Matches >= 0.80% of total_matches
+
+**Template:**
+"{deck_name} is the spoiler pick — only {share}% of the format, but {adjusted_win_rate}% adjusted win rate makes it dangerous at {rating} ({tier}). Built to upset expectations."
+
+---
+
+## Template 23: Solid Performer
+**Requirements:**
+- Rating >= 81.00
+- Rating < 85.00
+- Adjusted Win Rate >= 49.50%
+- Adjusted Win Rate < 52.00%
+- Matches >= 1.80% of total_matches
+- Matches <= 4.00% of total_matches
+- Share >= 1.50%
+
+**Template:**
+"{deck_name} is a solid performer: {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Reliable and consistent."
+
+---
+
+## Template 24: Overplayed Underperformer
+**Requirements:**
+- Share >= 6.00%
+- Rating < 84.00
+- Adjusted Win Rate <= 50.00%
+
+**Template:**
+"{deck_name} represents {share}% of the format but underdelivers at {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate. Popularity exceeds performance."
+
+---
+
+## Template 25: Polarized Specialist
+**Requirements:**
+- Adjusted Win Rate >= 50.00%
+- Adjusted Win Rate <= 53.00%
+- Rating >= 79.00
+- Rating < 85.00
+- Matches >= 1.00% of total_matches
+- Matches <= 3.00% of total_matches
+- Share >= 1.00%
+- Share <= 3.50%
+
+**Template:**
+"{deck_name} is highly polarized — {adjusted_win_rate}% adjusted win rate at {rating} ({tier}) suggests feast-or-famine matchups. {share}% of the format across {matches} matches."
+
+---
+
+## Template 26: Promising Upstart
+**Requirements:**
+- Rating >= 82.00
+- Rating < 88.00
+- Matches <= 1.00% of total_matches
+- Matches >= 0.35% of total_matches
+- Adjusted Win Rate >= 51.00%
+
+**Template:**
+"{deck_name} shows promise at {rating} ({tier}) with {adjusted_win_rate}% adjusted win rate, but sample is limited ({matches} matches at {share}% of the meta). Potential evident."
+
+---
+
+## Template 27: Fringe Contender
+**Requirements:**
+- Rating >= 77.00
+- Rating < 82.00
+- Matches >= 1.00% of total_matches
+- Matches <= 3.00% of total_matches
+- Adjusted Win Rate >= 48.00%
+- Share >= 0.80%
+
+**Template:**
+"{deck_name} sits on the fringe at {rating} ({tier}) — {adjusted_win_rate}% adjusted win rate across {matches} matches at {share}% of the format. Viable but not elite."
+
+---
+
+## Template 28: High-Volume Inconsistent
+**Requirements:**
+- Rating >= 76.00
+- Rating < 83.00
+- Matches >= 2.50% of total_matches
+- Adjusted Win Rate < 50.50%
+- Share >= 2.00%
+
+**Template:**
+"{deck_name} sees heavy play but lacks consistency: {W}-{L}-{T} ({matches} matches) with {adjusted_win_rate}% adjusted win rate at {rating} ({tier}). {share}% of the format with mixed results."
+
+---
+
+## Template 29: Needs More Data
+**Requirements:**
+- Matches <= 0.70% of total_matches
+- Rating >= 75.00
+- Rating < 84.00
+
+**Template:**
+"{deck_name} has limited data ({matches} matches, {share}% of meta). Currently rated {rating} ({tier}), but more tournament results needed to confirm strength."
+
+---
+
+## Template 30: Default
+**Requirements:**
+- None of the above matched
+
+**Template:**
+"{deck_name} sits at {rating} ({tier}) representing {share}% of the format with {adjusted_win_rate}% adjusted win rate across {W}-{L}-{T} ({matches} matches)."
+
+---
