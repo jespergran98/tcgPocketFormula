@@ -2005,12 +2005,12 @@ const generateTable = () => {
         <div class="legend-item"><div class="legend-tier tier-S-plus">S+</div><div class="legend-description">94-97</div></div>
         <div class="legend-item"><div class="legend-tier tier-S">S</div><div class="legend-description">91-94</div></div>
         <div class="legend-item"><div class="legend-tier tier-A">A</div><div class="legend-description">88-91</div></div>
-        <div class="legend-item"><div class="legend-tier tier-B">B</div><div class="legend-description">84-88</div></div>
-        <div class="legend-item"><div class="legend-tier tier-C">C</div><div class="legend-description">80-84</div></div>
-        <div class="legend-item"><div class="legend-tier tier-D">D</div><div class="legend-description">75-80</div></div>
-        <div class="legend-item"><div class="legend-tier tier-E">E</div><div class="legend-description">70-75</div></div>
-        <div class="legend-item"><div class="legend-tier tier-F">F</div><div class="legend-description">65-70</div></div>
-        <div class="legend-item"><div class="legend-tier tier-Unranked">U</div><div class="legend-description">Below 65</div></div>
+        <div class="legend-item"><div class="legend-tier tier-B">B</div><div class="legend-description">85-88</div></div>
+        <div class="legend-item"><div class="legend-tier tier-C">C</div><div class="legend-description">82-85</div></div>
+        <div class="legend-item"><div class="legend-tier tier-D">D</div><div class="legend-description">79-82</div></div>
+        <div class="legend-item"><div class="legend-tier tier-E">E</div><div class="legend-description">76-79</div></div>
+        <div class="legend-item"><div class="legend-tier tier-F">F</div><div class="legend-description">73-76</div></div>
+        <div class="legend-item"><div class="legend-tier tier-Unranked">U</div><div class="legend-description">Below 73</div></div>
       </div>
       
       <div class="template-counter">
