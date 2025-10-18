@@ -12,6 +12,40 @@ Unranked = Below 70 (Insufficient/Unqualified)
 
 ---
 
+When applying the templates to 500 decks, only these 12 templates were used:
+
+Template Distribution
+Standard Report
+459
+Needs More Data
+21
+Cult Favorite
+6
+Dark Horse
+3
+Format Dominator
+2
+Battle-Tested Champion
+2
+Niche Specialist
+2
+Hidden Elite
+1
+High-Ceiling Mastery
+1
+Spoiler Pick
+1
+Promising Upstart
+1
+Fringe Contender
+1
+
+Update and improve the templates so they have more usage. Some templates should obviously be extremely hard to get, only possible form the very best decks, but I want a larger overall variety.
+
+The top templates should still be extremely hard to get, but improve the other templates, especially those that didn't appear a single time.
+
+---
+
 Formula 1: Hierarchical Bayesian Estimation with Meta Awareness (Sort by strength)
 
 Formula 2: Adaptive Wilson Score Interval (probably don't include this)
